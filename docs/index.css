@@ -5,6 +5,15 @@ nav {
     padding-top: 5px;
     box-sizing: border-box;
     }
+
+    table {
+    border-collapse: collapse;
+    }
+    table th, table td {
+    border: solid 1px black;
+    /*実線 1px 黒*/
+    }
+    
     
     ul.menu {
     display: flex;
@@ -25,11 +34,4 @@ nav {
     text-align: center;
     }
     
-    table {
-    border-collapse: collapse;
-    }
-    table th, table td {
-    border: solid 1px black;
-    /*実線 1px 黒*/
-    }
-    
+
