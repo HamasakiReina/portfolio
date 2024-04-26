@@ -258,37 +258,31 @@
         <br>
     </div>
 
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ4TQJ_mwrKLBV4AVeM-biGlQsltWX65orAKSl60hLYuCR0w/viewform?embedded=true" width="800" height="500" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>    
-    <footer class="footer mt-auto text-center">
-        <div class="container my-2">
-            <div class="row justify-content-center">
-                <div class="col">
-                    <div class="card-body">
-                        <p class="text-center mt-3">このサイトはPCからの閲覧を想定して作成しています。PC以外の端末からの閲覧は表示が崩れる場合があります。<br>　©︎ 2024 Reina Hamasaki</p>
-                    </div>
+ 
+<footer class="footer mt-auto text-center">
+    <div class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class="card-body">
+                    <p class="text-center mt-3">©︎ 2024 Reina Hamasaki</p>
                 </div>
             </div>
         </div>
-    </footer>
-    
-    <script>
-        document.querySelector('nav').addEventListener('click', function(event) {
-            if (event.target.tagName === 'A') {
-                event.preventDefault(); 
-                const targetId = event.target.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId); 
-                if (targetSection) {
-                    
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    </script>
-    
-    </body>
-    </html>
-    
+    </div>
+</footer>
 
-      
+<script>
+    document.querySelector('nav').addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+            event.preventDefault(); 
+            const targetId = event.target.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId); 
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
