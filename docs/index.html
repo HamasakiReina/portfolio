@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reina Hamasaki</title>
     <!-- 追加：ファビコン画像 -->
-    <link rel="icon" href="fb5dd70ab722a11e619c18f74c90b1b7_t.jpeg" type="image/x-icon">
+    <link rel="icon" href="3B9612A3-C876-48B6-80A2-784A8D316728_4_5005_c.jpeg" type="image/x-icon">
+
     <style>
+        /* 共通スタイル */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -19,10 +21,6 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
         }
         header {
             background-color: #343a40;
@@ -71,88 +69,54 @@
             margin-bottom: 10px;
             text-align: left;
         }
-        .profile-info {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
+
+        /* 共通スタイル：追加 */
+        .profile-img {
+            max-width: 100%;
+            height: auto;
         }
-        .profile-info img.profile-img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-            display: block;
-        }
-        .icon {
-            width: 50px;
-            height: 50px;
-        }
-        .footer {
-            background-color: #008F7E;
-            color: #ffffff;
-            text-align: center;
-            padding: 1rem 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        /* Added styles for skill list */
-        #skills .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start; 
-        }
-        #skills .skill-item {
-            margin-right: 10px; 
-            padding: 8px 12px;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 20px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #skills .skill-item:hover {
-            background-color: #0056b3;
-        }
-        /* Added styles for achievements */
-        .achievements {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #007bff;
-        }
-        .achievements h3 {
-            color: #007bff;
-        }
-        .achievements ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .achievements li {
-            margin-bottom: 10px;
-            text-align: left;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .achievements li:before {
-            content: '★ ';
-            color: gold;
-        }
-        
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
+
+        /* メディアクエリ */
+        @media screen and (min-width: 768px) {
             .container {
-                flex-direction: column;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
             }
-            nav {
-                text-align: center;
-                margin-top: 10px;
+            .profile-info {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
             }
-            nav a {
-                margin: 0 10px;
+            .profile-info img.profile-img {
+                margin-top: 20px;
+                width: 300px;
+                height: 300px;
+            }
+            .skill-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start; 
+            }
+            .skill-item {
+                margin-right: 10px; 
+                padding: 8px 12px;
+                background-color: #007bff;
+                color: #fff;
+                border-radius: 20px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .skill-item:hover {
+                background-color: #0056b3;
+            }
+            .achievements {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 2px solid #007bff;
             }
         }
     </style>
@@ -161,25 +125,24 @@
 
 <header>
     <div class="container">
-        <h1>Reina Hamasaki's Portfolio</h1>
+        <h1>Portfolio</h1>
         <nav>
             <a href="#About Me">About Me</a>
             <a href="#skills">Skill</a>
             <a href="#projects">Project</a>
             <a href="#contact">Contact</a>
-            <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;">
-                <img src="logo-white.png" class="icon">
+            <a href="https://twitter.com/Rh_sapphire" target="_blank">
+                <img src="logo-white.png" class="icon" style="width: 30px; height: auto;">
             </a>
-            <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;">
-                <img src="github-mark-white.png" class="icon">
+            <a href="https://github.com/HamasakiReina" target="_blank">
+                <img src="github-mark-white.png" class="icon" style="width: 30px; height: auto;">
             </a>
-            <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;">
-                <img src="Instagram_Glyph_Gradient.png" class="icon">
+            <a href="https://www.instagram.com/r_lifedays/" target="_blank">
+                <img src="Instagram_Glyph_Gradient.png" class="icon" style="width: 30px; height: auto;">
             </a>
         </nav>
     </div>
 </header>
-
 
 <section id="About Me" class="container">
     <h2>About Me</h2>
