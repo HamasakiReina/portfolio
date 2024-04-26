@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reina Hamasaki</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        header {
+            background-color: #343a40;
+            color: #fff;
+            text-align: left;
+            padding: 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-weight: bold;
+            margin-left: 20px;
+            text-align: left;
+        }
+        nav {
+            text-align: right;
+            margin-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #007bff;
+        }
+        section {
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .profile-info {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .profile-info img.profile-img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            display: block;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+        .footer {
+            background-color: #008F7E;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        /* Added styles for skill list */
+        #skills .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; 
+        }
+        #skills .skill-item {
+            margin-right: 10px; 
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #skills .skill-item:hover {
+            background-color: #0056b3;
+        }
+        /* Added styles for achievements */
+        .achievements {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #007bff;
+        }
+        .achievements h3 {
+            color: #007bff;
+        }
+        .achievements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .achievements li {
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .achievements li:before {
+            content: '★ ';
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Portfolio</h1>
+        <nav>
+            <a href="#About Me">About Me</a>
+            <a href="#skills">Skill</a>
+            <a href="#projects">Project</a>
+            <a href="#contact">Contact</a>
+            <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;">
+                <img src="logo-white.png" class="icon">
+            </a>
+            <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;">
+                <img src="github-mark-white.png" class="icon">
+            </a>
+            <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;">
+                <img src="Instagram_Glyph_Gradient.png" class="icon">
+            </a>
+        </nav>
+    </div>
+</header>
+
+<section id="About Me" class="container">
+    <h2>About Me</h2>
+    <div class="profile-info">
+        <ul>
+            <li><strong>名前:</strong> 濱崎麗奈</li>
+            <li><strong>所属:</strong> 武蔵野大学データサイエンス学部　石橋ゼミ</li>
+            <li><strong>趣味:</strong> 旅行・スキューバダイビング・音楽を聴く</li>
+            <li><strong>言語:</strong> 英語（日常会話レベル）・韓国語（日常会話レベル）・中国語（勉強中）
+            <li><strong>最近興味があること:</strong> 対話型AIの開発・DB設計</li>
+            <li><strong>目標:</strong> 社会課題を発見し革新的なアプローチを追求して問題解決に取り組む</li>
+            <br>
+            <li><strong>資格:</strong> <br>実用技能英語検定２級<br>ダイビングライセンス 　PADI:アドヴァンスド・オープン・ウォーター(AOW)取得済
+            
+            <br>
+            <li><strong>アルバイト:</strong><br> 東京ディズニーランド・東京ディズニーシーキャスト（2017~2022）
+            <br>株式会社やる気スイッチグループ　プログラミング教育HALLO　塾講師（小学・中学クラス / 2020~2022）
+            <br>株式会社ノジマ　カスタマーセンター総合窓口業務（2021~現在）</li>
+
+        </ul>
+        <img src="8E3CD550-12EC-4304-99EE-69FF80179592_1_201_a.jpeg" alt="Profile Image" class="profile-img">
+
+
+        <br>
+        <strong>常に新しい課題に取り組み、新しい技術に触れ、革新的なアプローチを追求することが好きで様々な種類のイベント・アルバイトの経験を続けてきました。
+        <br>
+        それぞれのプロジェクトやチームにおいて効果的なコミュニケーションと協力を重視し、目標達成に向けて積極的に活動してきました。
+        <br>
+        将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。
+    </strong>
+        <br>
+        
+        <br>
+    </div>
+    <div class="achievements">
+        <h3>実績</h3>
+        <ul>
+            <li>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</li>
+            <br>
+            <li>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</li>
+        </ul>
+
+        
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+
+<section id="skills" class="container">
+    <h2>Skill</h2>
+    <div class="skill-list">
+        <div class="skill-item">Python</div>
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">TypeScript</div>
+        <div class="skill-item">PHP</div>
+        <div class="skill-item">Sinatra</div>
+        <div class="skill-item">React</div>
+        <div class="skill-item">Git/GitHub</div>
+        <br>
+        <strong>Webアプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong>
+    </div>
+</section>
+
+<section id="projects" class="container">
+    <h2>Project</h2>
+    <div class="portfolio-item">
+        <h2>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</h2>
+        <p>触楽入門ワークショップ　～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
+        <br>日常生活のなかにある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ、
+        <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを提案し、Pythonで制作したプロトタイプを制作して発表しました。
+        <br>
+        <br>
+        <iframe src="https://player.vimeo.com/video/282970531?h=38b6c90791" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+        <h2>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</h2>
+        <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト「自分カフェ」を発表しました。
+            <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで、
+            <br>仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを実際に仮想空間上に制作しました。
+            <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり鼓舞してくれたりする
+            <br>「自分が自分を助ける」社会を提案しました。</p>
+        <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
+
+        <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
+
+        <br>
+        <br>
+        <h2>カラオケアプリケーション</h2>
+        <p>動画からボーカルを分離し、入力した声を配列に変換してコサイン類似度システムを使用し採点を行うアプリケーションを作成しました。</p>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUFeAkI7llOaOUomWIq2QLXSaj8rhWSmVZerxKoTGf1hHli5fMc5xR2mK9YcKqZYlduDIHCN4taN-A/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>    <div class="portfolio-item">
+        <h1>ブランドロゴ判別webアプリケーション</h1>
+        <p>画像認識技術をプログラミングし、実在するブランドのロゴ画像を分析しどこのブランドか判別が容易になるアプリケーションを作成しました。</p>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6sojed0x9E4bxDEeJCH0UPn2xa3jLBaRUk0g3k1Gel55CCHBNsHtAQpGQe64qFIBcRJotpkXcwKSI/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <h1>風邪の原因を予測するベイジアンネットワークの作成</h1>
+        <p>推論モデルと組み合わせ診断を行う関数を使用し、流行状況を分析した上で個人の症状と生活習慣から風邪の原因を予測して、
+            <br>適切な対策を講じることが可能なベイジアンネットワークシステムデモを開発しました。</p>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMBVuGqU0cFEQRtCQ_Kl2PEeBweneAM5ZLAE2TJ5z3zoGhilKanKbsakVr7CxBvPHZ9BUXWt2fMDyL/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="369" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <h1>SDGsビジネスモデル考案</h1>
+        <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、ビジネスモデルを考案し発表しました。</p>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjy17NQBA5KUNzcHx-GuLi5sIi-5nUJMhLCNHy0zqxwj5tAux-gK79K62GVchlciSlTYdRSPnZxYYn/embed?start=false&loop=false&delayms=3000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <br>
+        <br>
+        <p>持続可能な農業を目指す上での活動として堆肥茶について着目し、ビジネスモデルを考案し発表しました。</p>
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3NaihdmApltc35EHvG0QLowJS6u5t77-l36IlHOU3LhzoioMnO2gb4oz7lT90dFxP7j9YHgl4mWRw/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ4TQJ_mwrKLBV4AVeM-biGlQsltWX65orAKSl60hLYuCR0w/viewform?embedded=true" width="800" height="500" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>    
+    <footer class="footer mt-auto text-center">
+        <div class="container my-2">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="card-body">
+                        <p class="text-center mt-3">©︎ 2024 Reina Hamasaki</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelector('nav').addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                event.preventDefault(); 
+                const targetId = event.target.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId); 
+                if (targetSection) {
+                    
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+    
+    </body>
+    </html>
+    
+
+      
