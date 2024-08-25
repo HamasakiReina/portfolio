@@ -7,14 +7,44 @@
     <link rel="icon" href="fb5dd70ab722a11e619c18f74c90b1b7_t.jpeg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+
+
+
+
+
     <style>
         body {
-            margin: 0;
-            padding: 0;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
             background-color: #f8f9fa;
             color: #333;
-            line-height: 1.6;
-            font-family: 'Comfortaa', sans-serif; /* Comfortaaフォントを指定 */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: bold;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #007bff;
+      
+            color: #fff; /* h1は白文字 */
+        }
+        h2 {
+            text-align: center;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: bold;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+
+            color: #333; /* h2は黒文字 */
         }
         .container {
             max-width: 1200px;
@@ -22,21 +52,17 @@
             padding: 20px;
         }
         header {
+            font-family: 'Noto Sans', sans-serif;
             background-color: #343a40;
             color: #fff;
             text-align: left;
-            padding: 20px 0;
             box-sizing: border-box;
-        }
-        h1, h2 {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            font-weight: bold;
+
+            
         }
         nav {
             text-align: right;
-            margin-top: 20px;
+            margin-top: 0px;
         }
         nav a {
             color: #fff;
@@ -49,7 +75,7 @@
             color: #007bff;
         }
         section {
-            margin: 20px 0;
+            margin: 40px 0;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -94,28 +120,31 @@
         #skills {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+
             gap: 20px;
             padding: 20px;
+            width: calc(100% - 40px)
         }
         .skill-card {
-            background: linear-gradient(135deg, #007bff, #00c6ff);
-            border-radius: 15px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
-            width: 100px; 
-            height: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-        }
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+
+}
+
         .skill-card:hover {
             transform: translateY(-10px) rotate(2deg);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
@@ -149,62 +178,90 @@
             position: relative;
             z-index: 1;
         }
-        .container {
-            max-width: 1200px;
+        .slider {
+            width: 80%;
             margin: auto;
+        }
+        .slide-item {
             padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: #000;
         }
-        .achievements {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #007bff;
+        .slide-item h2, .slide-item p {
+            margin: 0 0 20px;
+            color: #000;
         }
-        .achievements h3 {
-            color: #007bff;
-            font-size: 20px; 
+        iframe {
+            width: 100%;
+            height: 360px;
+            border: none;
         }
-        .achievements ul {
-            list-style-type: none;
-            padding: 0;
+        .slick-dots {
+            text-align: center;
+            padding: 20px 0;
         }
-        .achievements li {
-            margin-bottom: 10px;
-            text-align: left;
-            font-weight: bold;
-            font-size: 18px; 
+        .slick-dots li {
+            display: inline-block;
+            margin: 0 5px;
         }
-        .achievements li:before {
-            content: '★ ';
-            color: gold;
+        .slick-dots li button {
+            font-size: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
         }
-        #About_Me {
-            font-size: 18px; 
+        .slick-dots li.slick-active button {
+            background-color: #007bff;
         }
-        @media screen and (max-width: 768px) {
-            nav {
-                text-align: center;
-                margin-top: 10px;
-            }
-            nav a {
-                margin: 0 10px;
-            }
-            .portfolio-item iframe,
-            #contact iframe {
-                max-width: 100%;
-                height: auto;
-            }
+        #projects, #contact {
+    width: calc(100% - 40px); /* ページ幅から40pxを引いた幅を設定 */
+    margin: 0 auto; /* セクション全体を中央に揃える */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+
+        /* 星マークのスタイル */
+        .star-list li:before {
+            content: '★'; /* 星マーク */
+            color: gold; /* 星の色を黄色に設定 */
+            margin-right: 10px; /* 星とテキストの間に余白を追加 */
         }
 
-        *:lang(ja) {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-        }
+        /* 青線のスタイル（枠の端から端まで） */
+        .blue-line-container {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    width: 100%; /* 親要素全体の幅を使う */
+    max-width: 1000px; /* 必要に応じて最大幅を調整 */
+    box-sizing: border-box;
+    bottom: 0; /* 青線をヘッダーの一番下に配置 */
+
+}
+
+
     </style>
+    <!-- Slick Carouselのスタイルシートを追加 -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
+
+
+
 <body>
 
 <header>
     <div class="container">
         <h1>Reina Hamasaki's Portfolio</h1>
+        
         <nav>
             <a href="#About_Me">About Me</a>
             <a href="#skills">Skill</a>
@@ -220,10 +277,13 @@
                 <img src="Instagram_Glyph_Gradient.png" class="icon">
             </a>
         </nav>
+
+    
     </div>
+    
 </header>
 
-<section id="About Me" class="container">
+<section id="About_Me" class="container">
     <h2>About Me</h2>
     <div class="profile-info">
         <ul>
@@ -246,148 +306,166 @@
         <br>
         それぞれのプロジェクトやチームにおいて効果的なコミュニケーションと協力を重視し、目標達成に向けて積極的に活動してきました。
         <br>
-        将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。
-        </strong>
-        <br>
+        <div class="blue-line-container">
+        <strong>将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。<br></strong>
         <br>
     </div>
-    <div class="achievements">
-        <h3>実績</h3>
-        <ul>
-            <li style="font-size: 18px;">慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</li> 
-            <br>
-            <li style="font-size: 18px;">日本科学未来館ビジョナリーキャンプ・プロジェクト参加</li>
-            <br>
-            <h3>インターン参加</h3>
-            <li style="font-size: 18px;">株式会社矢崎総業   　　画像分析による変則信号通知機能ドライブレコーダー付随型システムの発案・企画</li> 
-            <br>
-            <li style="font-size: 18px;">株式会社ベネッセコーポレーション　ハッカソン型インターンシップ "User-Based Digital Competition" 参加
-                <br>　教育機関向け　オンライン講義同時双方向型プラットフォーム・コミュニケーションサービスの企画・開発</li> 
-            <br>
-            <li style="font-size: 18px;">エヌ・ティ・ティ・アドバンステクノロジ株式会社(NTT-AT)　　工場内温湿度の制御・モニタリングwebアプリケーションの企画・開発</li> 
-        </ul>
-    </div>
-</section>
-<br>
-<br>
-<br>
+    <br>
+<h3 style="color: #007bff;">実績</h3>
+<ul class="star-list">
+    <li style="font-size: 18px;"><strong>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</strong></li> 
+    <br>
+    <li style="font-size: 18px;"><strong>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</strong></li>
+    <br>
+    <h3 style="color: #007bff;">インターン参加</h3>
+    <li style="font-size: 18px;"><strong>株式会社矢崎総業　　画像分析による変則信号通知機能ドライブレコーダー付随型システムの発案・企画</strong> </li> 
+    <br>
+    <li style="font-size: 18px;"><strong>エヌ・ティ・ティ・アドバンステクノロジ株式会社(NTT-AT)　　工場内温湿度の制御・モニタリングwebアプリケーションの企画・開発</strong> </li> 
+    <br>
+    <li style="font-size: 18px;"><strong>株式会社ベネッセコーポレーション　　ハッカソン型インターンシップ "User-Based Digital Competition" 参加<br>
+        　 オンライン講義同時双方向型プラットフォーム・コミュニケーションサービスの企画・開発</strong> </li> 
+</ul>
+
 
 </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+
+<br><br><br>
 <section id="skills" class="container">
-<h2>Skill　</h2>
+<h2>Skill　　　</h2>
+
 <div class="skill-card">
     <i class="fab fa-python icon"></i>
     <span>Python</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-html5 icon"></i>
     <span>HTML</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-css3-alt icon"></i>
     <span>CSS</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-js-square icon"></i>
     <span>JavaScript</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-php icon"></i>
     <span>PHP</span>
-    </div>
-    <div class="skill-card">
-    <i class="fab fa-react icon"></i>
-    <span>React</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fas fa-cube icon"></i>
     <span>NumPy</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
+    <i class="fab fa-react icon"></i>
+    <span>React</span>
+</div>
+<div class="skill-card">
     <i class="fas fa-table icon"></i>
     <span>Pandas</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fas fa-chart-bar icon"></i>
     <span>Matplotlib</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-slack icon"></i>
     <span>Slack</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-android icon"></i>
     <span>Android Studio</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fas fa-code icon"></i>
     <span>Visual Studio Code</span>
-    </div>
-    <div class="skill-card">
+</div>
+<div class="skill-card">
     <i class="fab fa-github icon"></i>
     <span>GitHub</span>
+</div>
+<li style="font-size: 18px;"><strong>Webサイト/アプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong></li> 
+</section>
+<br><br><br>
+<section id="projects" class="container">
+    <h2>Project</h2>
+    <div class="slider">
+        <div class="slide-item">
+            <h2>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ</h2>
+            <p>触楽入門ワークショップ　～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
+            <br>日常生活のなかにある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ、
+            <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを提案し、Pythonで制作したプロトタイプを制作して発表しました。</p>
+            <iframe src="https://player.vimeo.com/video/282970531?h=38b6c90791" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="slide-item">
+            <h2>日本科学未来館ビジョナリーキャンプ・プロジェクト</h2>
+            <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト「自分カフェ」を発表しました。
+                <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで、
+                <br>仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを実際に仮想空間上に制作しました。
+                <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり鼓舞してくれたりする
+                <br>「自分が自分を助ける」社会を提案しました。</p>
+            <br>
+            <ul>
+                <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
+                <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
+            </ul>
+        </div>
     </div>
-    <li style="font-size: 18px;"><strong>Webサイト/アプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong></li> 
 </section>
 
 <section id="projects" class="container">
-    <h2>Project</h2>
-    <div class="portfolio-item">
-        <h2>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</h2>
-        <p>触楽入門ワークショップ　～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
-        <br>日常生活のなかにある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ、
-        <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを提案し、Pythonで制作したプロトタイプを制作して発表しました。</p>
-        <iframe src="https://player.vimeo.com/video/282970531?h=38b6c90791" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-
-        <h2>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</h2>
-        <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト「自分カフェ」を発表しました。
-            <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで、
-            <br>仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを実際に仮想空間上に制作しました。
-            <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり鼓舞してくれたりする
-            <br>「自分が自分を助ける」社会を提案しました。</p>
-        <br>
-        <ul>
-            <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
-            <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
-        </ul>
-
-
-      <br>
-        <br>
-        <h2>カラオケアプリケーション</h2>
-        <p>動画からボーカルを分離し、入力した声を配列に変換してコサイン類似度システムを使用し採点を行うアプリケーションを作成しました。</p>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUFeAkI7llOaOUomWIq2QLXSaj8rhWSmVZerxKoTGf1hHli5fMc5xR2mK9YcKqZYlduDIHCN4taN-A/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>    <div class="portfolio-item">
-        <h1>ブランドロゴ判別webアプリケーション</h1>
-        <p>画像認識技術をプログラミングし、実在するブランドのロゴ画像を分析しどこのブランドか判別が容易になるアプリケーションを作成しました。</p>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6sojed0x9E4bxDEeJCH0UPn2xa3jLBaRUk0g3k1Gel55CCHBNsHtAQpGQe64qFIBcRJotpkXcwKSI/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        <h1>風邪の原因を予測するベイジアンネットワークの作成</h1>
-        <p>推論モデルと組み合わせ診断を行う関数を使用し、流行状況を分析した上で個人の症状と生活習慣から風邪の原因を予測して、
-            <br>適切な対策を講じることが可能なベイジアンネットワークシステムデモを開発しました。</p>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMBVuGqU0cFEQRtCQ_Kl2PEeBweneAM5ZLAE2TJ5z3zoGhilKanKbsakVr7CxBvPHZ9BUXWt2fMDyL/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        <h1>知識ベース、知識処理を応用したデータベースシステムの作成</h1>
-        <p>環境白書内の画像・文書・音声データを対象に、環境に関する多様なデータを時空間的な属性とともに統合し、管理するデータベースシステムを構築しました。</p>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ4a0s4abzH-SrjEccFJZ52pA9TVJEhRAYPnQugTlFG0VJN5NXGx0FsoRiXGEts2KWX8qdgbY2F3Dvl/embed?start=false&loop=false&delayms=60000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        <h1>SDGsビジネスモデル考案</h1>
-        <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、ビジネスモデルを考案し発表しました。</p>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjy17NQBA5KUNzcHx-GuLi5sIi-5nUJMhLCNHy0zqxwj5tAux-gK79K62GVchlciSlTYdRSPnZxYYn/embed?start=false&loop=false&delayms=3000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        <br>
-        <br>
-        <p>持続可能な農業を目指す上での活動として堆肥茶について着目し、ビジネスモデルを考案し発表しました。</p>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3NaihdmApltc35EHvG0QLowJS6u5t77-l36IlHOU3LhzoioMnO2gb4oz7lT90dFxP7j9YHgl4mWRw/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        <br>
-        <br>
-        <br>
-        <br>
+    <div class="slider">
+        <div class="slide-item">
+            <h2>カラオケアプリケーション</h2>
+            <p>動画からボーカルを分離し、入力した声を配列に変換してコサイン類似度システムを使用し採点を行うアプリケーションを作成しました。</p>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUFeAkI7llOaOUomWIq2QLXSaj8rhWSmVZerxKoTGf1hHli5fMc5xR2mK9YcKqZYlduDIHCN4taN-A/embed?start=false&loop=true&delayms=30000"></iframe>
+        </div>
+        <div class="slide-item">
+            <h2>ブランドロゴ判別webアプリケーション</h2>
+            <p>画像認識技術をプログラミングし、実在するブランドのロゴ画像を分析しどこのブランドか判別が容易になるアプリケーションを作成しました。</p>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6sojed0x9E4bxDEeJCH0UPn2xa3jLBaRUk0g3k1Gel55CCHBNsHtAQpGQe64qFIBcRJotpkXcwKSI/embed?start=false&loop=true&delayms=30000"></iframe>
+        </div>
+        <div class="slide-item">
+            <h2>風邪の原因を予測するベイジアンネットワークの作成</h2>
+            <p>推論モデルと組み合わせ診断を行う関数を使用し、流行状況を分析した上で個人の症状と生活習慣から風邪の原因を予測して、適切な対策を講じることが可能なベイジアンネットワークシステムデモを開発しました。</p>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMBVuGqU0cFEQRtCQ_Kl2PEeBweneAM5ZLAE2TJ5z3zoGhilKanKbsakVr7CxBvPHZ9BUXWt2fMDyL/embed?start=false&loop=true&delayms=30000"></iframe>
+        </div>
+        <div class="slide-item">
+            <h2>知識ベース、知識処理を応用したデータベースシステムの作成</h2>
+            <p>環境白書内の画像・文書・音声データを対象に、環境に関する多様なデータを時空間的な属性とともに統合し、管理するデータベースシステムを構築しました。</p>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ4a0s4abzH-SrjEccFJZ52pA9TVJEhRAYPnQugTlFG0VJN5NXGx0FsoRiXGEts2KWX8qdgbY2F3Dvl/embed?start=false&loop=false&delayms=60000"></iframe>
+        </div>
+        <div class="slide-item">
+            <h2>SDGsビジネスモデル考案</h2>
+            <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、ビジネスモデルを考案し発表しました。</p>
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjy17NQBA5KUNzcHx-GuLi5sIi-5nUJMhLCNHy0zqxwj5tAux-gK79K62GVchlciSlTYdRSPnZxYYn/embed?start=false&loop=false&delayms=3000"></iframe>
+        </div>
     </div>
 </section>
 
-    
+<!-- Slick Carouselのスクリプトを追加 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.slider').each(function() {
+            $(this).slick({
+                dots: true, /* ドットナビゲーションを有効化 */
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 20000,
+            });
+        });
+    });
+</script>
+
 <section id="contact" class="container">
-            <br>
     <h2>Contact</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ4TQJ_mwrKLBV4AVeM-biGlQsltWX65orAKSl60hLYuCR0w/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>    
 </section>
