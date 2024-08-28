@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Reina Hamasaki</title>
     <link rel="icon" href="fb5dd70ab722a11e619c18f74c90b1b7_t.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -20,6 +21,95 @@
             margin: 0;
             padding: 0;
         }
+
+        /* ローディング画面のスタイル */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #343a40;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        #loadingScreen h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 70px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: writeText 4s forwards;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #fff;
+            letter-spacing: 2px;
+        }
+
+        @keyframes writeText {
+            0% {
+                width: 0;
+                opacity: 1;
+            }
+            100% {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        #loadingScreen p {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 20px;
+            text-align: center;
+            max-width: 80%;
+            opacity: 0;
+            animation: fadeIn 2s 4s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* メニューボタンのスタイル */
+        #menuButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            display: none;
+        }
+
+        /* メニューアイコンのスタイル */
+        #menuIcon {
+            width: 80px;
+            height: 80px;
+            background-color: transparent;
+            border-radius: 50%;
+            color: #000;
+            text-align: center;
+            line-height: 80px;
+            cursor: pointer;
+            font-size: 50px;
+            box-shadow: none;
+            transition: background-color 0.3s;
+        }
+
+        /* ナビゲーションリンクのスタイル */
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
         h1 {
             text-align: center;
             font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -27,8 +117,9 @@
             padding-bottom: 20px;
             margin-bottom: 40px;
             border-bottom: 2px solid #007bff;
-            color: #fff; 
+            color: #fff;
         }
+
         h2 {
             text-align: center;
             font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -37,13 +128,15 @@
             margin-bottom: 10px;
             border-bottom: 2px solid #007bff;
             display: inline-block;
-            color: #333; 
+            color: #333;
         }
+
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 20px;
         }
+
         header {
             font-family: 'Noto Sans', sans-serif;
             background-color: #343a40;
@@ -51,20 +144,12 @@
             text-align: left;
             box-sizing: border-box;
         }
+
         nav {
             text-align: right;
             margin-top: 0px;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #007bff;
-        }
+
         section {
             margin: 40px 0;
             background-color: #fff;
@@ -72,24 +157,29 @@
             padding: 20px;
             box-sizing: border-box;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 10px;
             text-align: left;
         }
+
         .profile-info {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             flex-wrap: wrap;
         }
+
         .profile-details {
             flex: 1;
             margin-right: 20px;
         }
+
         .profile-info img.profile-img {
             border-radius: 50%;
             width: 100%;
@@ -101,10 +191,12 @@
             margin-top: 20px;
             display: block;
         }
+
         .icon {
             width: 50px;
             height: 50px;
         }
+
         .footer {
             background-color: #008F7E;
             color: #ffffff;
@@ -112,14 +204,16 @@
             padding: 1rem 0;
             box-sizing: border-box;
         }
+
         #skills {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
             width: calc(100% - 40px);
-            justify-content: center; 
+            justify-content: center;
         }
+
         .skill-card {
             background: linear-gradient(135deg, #007bff, #00c6ff);
             border-radius: 15px;
@@ -138,20 +232,24 @@
             overflow: hidden;
             color: #fff;
         }
+
         .skill-card:hover {
             transform: translateY(-10px) rotate(2deg);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
+
         .skill-card .icon {
             font-size: 35px;
             margin-bottom: 10px;
             color: #fff;
             opacity: 0.8;
         }
+
         .skill-card span {
             font-size: 17px;
             font-weight: bold;
         }
+
         .skill-card:before {
             content: '';
             position: absolute;
@@ -164,17 +262,21 @@
             z-index: 0;
             transition: transform 0.6s ease;
         }
+
         .skill-card:hover:before {
             transform: scale(1.5);
         }
+
         .skill-card * {
             position: relative;
             z-index: 1;
         }
+
         .slider {
             width: 80%;
             margin: auto;
         }
+
         .slide-item {
             padding: 20px;
             background-color: #fff;
@@ -183,23 +285,28 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             color: #000;
         }
+
         .slide-item h2, .slide-item p {
             margin: 0 0 20px;
             color: #000;
         }
+
         iframe {
             width: 100%;
             height: 360px;
             border: none;
         }
+
         .slick-dots {
             text-align: center;
             padding: 20px 0;
         }
+
         .slick-dots li {
             display: inline-block;
             margin: 0 5px;
         }
+
         .slick-dots li button {
             font-size: 0;
             width: 12px;
@@ -209,9 +316,11 @@
             border: none;
             cursor: pointer;
         }
+
         .slick-dots li.slick-active button {
             background-color: #007bff;
         }
+
         #projects, #contact {
             width: calc(100% - 40px);
             margin: 0 auto;
@@ -222,7 +331,7 @@
         }
 
         .star-list li:before {
-            content: '★'; 
+            content: '★';
             color: gold;
             margin-right: 10px;
         }
@@ -231,39 +340,48 @@
             border-bottom: 2px solid #007bff;
             padding-bottom: 5px;
             width: 100%;
-            max-width: 1000px; 
+            max-width: 1000px;
             box-sizing: border-box;
-            bottom: 0; 
+            bottom: 0;
         }
+
         /* モバイルデバイス用のスタイル */
         @media only screen and (max-width: 600px) {
             body {
                 font-size: 14px;
             }
+
             .container {
                 padding: 10px;
             }
+
             nav {
                 text-align: center;
             }
+
             nav a {
                 display: block;
                 margin: 10px 0;
             }
+
             .profile-info {
                 flex-direction: column;
                 align-items: center;
             }
+
             .profile-details {
                 margin-right: 0;
             }
+
             .profile-info img.profile-img {
                 max-width: 200px;
                 margin-top: 20px;
             }
+
             .skill-card {
-                width: calc(50% - 20px); 
+                width: calc(50% - 20px);
             }
+
             .slider {
                 width: 100%;
             }
@@ -273,148 +391,65 @@
             body {
                 font-size: 16px;
             }
+
             nav {
                 text-align: center;
             }
+
             nav a {
                 margin: 0 10px;
             }
+
             .slider {
                 width: 90%;
             }
         }
+
         /* デスクトップ用のスタイル */
         @media only screen and (min-width: 1025px) {
             body {
                 font-size: 18px;
             }
+
             .slider {
                 width: 80%;
             }
         }
+
         img {
             max-width: 100%;
             height: auto;
         }
 
-        /* ローディング画面のスタイル */
-        #loadingScreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #343a40;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 1s ease-out; /* フェードアウトのためのトランジション */
-        }
-        #loadingScreen h1 {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            font-size: 70px;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out infinite;
-        }
-        #loadingScreen p {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            font-size: 20px;
-            text-align: center;
-            max-width: 80%;
-        }
-        @keyframes fadeIn {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+        /* メニューリンクの位置を調整 */
+        #navMenu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            overflow: hidden;
+            font-family: 'M PLUS Rounded 1c';
         }
 
-        /* メニューボタンのスタイル */
-        #menuButton {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 10000;
-            display: none; /* 初期状態で非表示にする */
+        #navMenu a {
+            display: block;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
         }
 
-/* メニューアイコンのスタイル */
-#menuIcon {
-    width: 80px; /* ボタン全体のサイズを大きくする */
-    height: 80px;
-    background-color: transparent; /* ボタンの背景を透明にする */
-    border-radius: 50%;
-    color: #000; /* 三本線の色を黒にする */
-    text-align: center;
-    line-height: 80px; /* サイズに合わせて中央に配置 */
-    cursor: pointer;
-    font-size: 50px; /* 三本線のサイズを大きくする */
-    box-shadow: none; /* 影をなくす */
-    transition: background-color 0.3s;
-}
-
-
-/* ナビゲーションリンクのスタイル */
-nav a {
-    color: #fff; /* リンクの色を白に統一 */
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px; /* フォントサイズを調整 */
-    transition: color 0.3s;
-}
-
-/* メニューの位置を合わせる */
-#menuButton {
-    position: fixed;
-    top: 20px; /* ナビゲーションの高さに合わせて位置を調整 */
-    right: 20px;
-    z-index: 10000;
-    display: block;
-}
-
-#navMenu {
-    display: none;
-    position: absolute;
-    top: 60px; /* メニューアイコンの位置に合わせて調整 */
-    right: 0;
-    background-color: #343a40; /* 背景色を統一 */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* メニューにも影を追加 */
-    overflow: hidden;
-    font-family: 'M PLUS Rounded 1c';
-}
-
-/* メニューリンクの位置を調整 */
-#navMenu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: transparent; /* 背景を透明にする */
-    border: none; /* ボーダーをなくす */
-    border-radius: 0; /* 角丸もなくす */
-    box-shadow: none; /* 影もなくす */
-    overflow: hidden;
-    font-family: 'M PLUS Rounded 1c';
-}
-
-#navMenu a {
-    display: block;
-    padding: 10px 20px;
-    color: #000; /* 文字の色を黒にする */
-    text-decoration: none;
-    background-color: transparent; /* リンクの背景を透明にする */
-    border-bottom: 1px solid transparent; /* 下線も透明にする */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-#navMenu a:hover {
-    background-color: transparent; /* ホバー時の背景も透明にする */
-}
+        #navMenu a:hover {
+            background-color: transparent;
+        }
 
         #navMenu a:last-child {
             border-bottom: none;
@@ -422,9 +457,9 @@ nav a {
 
         /* メニューを表示する際のアニメーション */
         .menu-open #navMenu a {
-            opacity: 1; /* フェードイン */
-            transform: translateY(0); /* スライドダウン */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* アニメーションを調整 */
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -433,8 +468,8 @@ nav a {
 <body>
     <!-- ローディング画面 -->
     <div id="loadingScreen">
-        <h1>WELCOME!</h1>
-        <p><strong>本サイトはPCからの閲覧を推奨していますが、マルチデバイスでの閲覧にも対応しています。<br>©︎ 2016-2024 Reina Hamasaki</strong></p>
+        <h1>Welcome!</h1>
+        <p>本サイトはレスポンシブデザインに対応しています<br>©︎ 2016-2024 Reina Hamasaki</p>
     </div>
 
     <!-- メニューボタン -->
@@ -685,7 +720,7 @@ nav a {
         });
 
         // 初期状態でメニューボタンを非表示にする
-document.getElementById('menuButton').style.display = 'none';
+        document.getElementById('menuButton').style.display = 'none';
 
         document.querySelector('nav').addEventListener('click', function(event) {
             if (event.target.tagName === 'A') {
