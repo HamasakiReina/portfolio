@@ -7,7 +7,7 @@
     <link rel="icon" href="fb5dd70ab722a11e619c18f74c90b1b7_t.jpeg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght=300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bilbo&display=swap" rel="stylesheet">
     <style>
         body {
@@ -43,7 +43,7 @@
             padding: 20px;
         }
         header {
-            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Noto Sans　JP', sans-serif;
             background-color: #343a40;
             color: #fff;
             text-align: left;
@@ -111,6 +111,10 @@
             text-align: center;
             padding: 1rem 0;
             box-sizing: border-box;
+        }
+        .footer p {
+            font-family: 'M PLUS Rounded 1c', sans-serif; 
+            font-weight: 300; 
         }
         #skills {
             display: flex;
@@ -283,7 +287,7 @@
                 width: 90%;
             }
         }
-        /* デスクトップ用のスタイル */
+
         @media only screen and (min-width: 1025px) {
             body {
                 font-size: 18px;
@@ -297,7 +301,7 @@
             height: auto;
         }
 
-        /* ローディング画面のスタイル */
+        /* ローディング */
         #loadingScreen {
             position: fixed;
             top: 0;
@@ -314,20 +318,19 @@
             opacity: 1;
             transition: opacity 1s ease-out;
         }
-#loadingScreen h1 {
-    font-family: 'Bilbo', cursive; /* フォントをBilboに変更 */
-    font-size: 70px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid; /* border-right を維持 */
-    padding-right: 10px; /* padding-right を追加 */
-    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
+        #loadingScreen h1 {
+            font-family: 'Bilbo', cursive; 
+            font-size: 70px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-right: 3px solid;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+            padding-right: 15px; 
+        }
         #loadingScreen p {
-            font-family: 'M PLUS Rounded 1c', sans-serif; /* フォントを変更 */
-    font-weight: 300; /* 細字に変更 */
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: 300; 
             font-size: 20px;
             text-align: center;
             max-width: 80%;
@@ -345,7 +348,7 @@
             50% { border-color: white; }
         }
 
-        /* メニューボタンのスタイル */
+
         #menuButton {
             position: fixed;
             top: 20px;
@@ -354,7 +357,7 @@
             display: none; 
         }
 
-        /* メニューアイコンのスタイル */
+
         #menuIcon {
             width: 80px;
             height: 80px;
@@ -369,7 +372,7 @@
             transition: background-color 0.3s;
         }
 
-        /* ナビゲーションリンクのスタイル */
+
         nav a {
             color: #fff; 
             text-decoration: none;
@@ -417,13 +420,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
-    <!-- ローディング画面 -->
+
     <div id="loadingScreen">
-        <h1>Welcome!      </h1>
+        <h1>Welcome!</h1>
         <p id="loadingText"><strong>本サイトはレスポンシブデザインに対応しています。<br>©︎ 2016-2024 Reina Hamasaki</strong></p>
     </div>
 
-    <!-- メニューボタン -->
+
     <div id="menuButton">
         <div id="menuIcon">&#9776;</div>
         <div id="navMenu">
@@ -730,7 +733,7 @@
             <div class="row justify-content-center">
                 <div class="col">
                     <div class="card-body">
-                        <p class="text-center mt-3" style="font-family: 'M PLUS Rounded 1c';">
+                        <p class="text-center mt-3" style="font-family: 'M PLUS Rounded 1c'; font-weight: 300;">
                         <strong>©︎ 2016-2024 Reina Hamasaki</strong>
                         </p>
                         
@@ -741,3 +744,4 @@
     </footer>
 </body>
 </html>
+
