@@ -226,7 +226,7 @@
             color: gold;
             margin-right: 10px;
         }
-        /* 青線のスタイル（枠の端から端まで） */
+
         .blue-line-container {
             border-bottom: 2px solid #007bff;
             padding-bottom: 5px;
@@ -235,7 +235,7 @@
             box-sizing: border-box;
             bottom: 0; 
         }
-        /* モバイルデバイス用のスタイル */
+        /* モバイル */
         @media only screen and (max-width: 600px) {
             body {
                 font-size: 14px;
@@ -283,7 +283,7 @@
                 width: 90%;
             }
         }
-        /* デスクトップ用のスタイル */
+        /* デスクトップ */
         @media only screen and (min-width: 1025px) {
             body {
                 font-size: 18px;
@@ -297,7 +297,7 @@
             height: auto;
         }
 
-        /* ローディング画面のスタイル */
+
         #loadingScreen {
             position: fixed;
             top: 0;
@@ -312,7 +312,7 @@
             flex-direction: column;
             z-index: 9999;
             opacity: 1;
-            transition: opacity 1s ease-out; /* フェードアウトのためのトランジション */
+            transition: opacity 1s ease-out;
         }
         #loadingScreen h1 {
             font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -335,7 +335,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
-    <!-- ローディング画面 -->
+
     <div id="loadingScreen">
         <h1>WELCOME!</h1>
         <p><strong>本サイトはPCからの閲覧を推奨していますが、マルチデバイスでの閲覧にも対応しています。<br>©︎ 2016-2024 Reina Hamasaki</strong></p>
