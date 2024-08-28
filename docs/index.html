@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Reina Hamasaki</title>
     <link rel="icon" href="fb5dd70ab722a11e619c18f74c90b1b7_t.jpeg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
@@ -12,11 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
-
-
-
-
-
     <style>
         body {
             font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -32,7 +27,6 @@
             padding-bottom: 20px;
             margin-bottom: 40px;
             border-bottom: 2px solid #007bff;
-      
             color: #fff; /* h1は白文字 */
         }
         h2 {
@@ -43,8 +37,7 @@
             margin-bottom: 10px;
             border-bottom: 2px solid #007bff;
             display: inline-block;
-
-            color: #333; /* h2は黒文字 */
+            color: #333; 
         }
         .container {
             max-width: 1200px;
@@ -57,8 +50,6 @@
             color: #fff;
             text-align: left;
             box-sizing: border-box;
-
-            
         }
         nav {
             text-align: right;
@@ -95,14 +86,18 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
+        .profile-details {
+            flex: 1;
+            margin-right: 20px;
+        }
         .profile-info img.profile-img {
             border-radius: 50%;
             width: 100%;
             max-width: 300px;
             height: auto;
             object-fit: cover;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left:　-100px;
+            margin-right: 100px;
             margin-top: 20px;
             display: block;
         }
@@ -120,31 +115,29 @@
         #skills {
             display: flex;
             flex-wrap: wrap;
-
             gap: 20px;
             padding: 20px;
-            width: calc(100% - 40px)
+            width: calc(100% - 40px);
+            justify-content: center; 
         }
         .skill-card {
-    background: linear-gradient(135deg, #007bff, #00c6ff);
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    color: #fff;
-
-}
-
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
         .skill-card:hover {
             transform: translateY(-10px) rotate(2deg);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
@@ -220,48 +213,97 @@
             background-color: #007bff;
         }
         #projects, #contact {
-    width: calc(100% - 40px); /* ページ幅から40pxを引いた幅を設定 */
-    margin: 0 auto; /* セクション全体を中央に揃える */
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-
-        /* 星マークのスタイル */
-        .star-list li:before {
-            content: '★'; /* 星マーク */
-            color: gold; /* 星の色を黄色に設定 */
-            margin-right: 10px; /* 星とテキストの間に余白を追加 */
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
 
+        .star-list li:before {
+            content: '★'; 
+            color: gold;
+            margin-right: 10px;
+        }
         /* 青線のスタイル（枠の端から端まで） */
         .blue-line-container {
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
-    width: 100%; /* 親要素全体の幅を使う */
-    max-width: 1000px; /* 必要に応じて最大幅を調整 */
-    box-sizing: border-box;
-    bottom: 0; /* 青線をヘッダーの一番下に配置 */
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            width: 100%;
+            max-width: 1000px; 
+            box-sizing: border-box;
+            bottom: 0; 
+        }
+        /* モバイルデバイス用のスタイル */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 10px;
+            }
+            nav {
+                text-align: center;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            .profile-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-details {
+                margin-right: 0;
+            }
+            .profile-info img.profile-img {
+                max-width: 200px;
+                margin-top: 20px;
+            }
+            .skill-card {
+                width: calc(50% - 20px); 
+            }
+            .slider {
+                width: 100%;
+            }
+        }
 
-}
-
-
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            body {
+                font-size: 16px;
+            }
+            nav {
+                text-align: center;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .slider {
+                width: 90%;
+            }
+        }
+        /* デスクトップ用のスタイル */
+        @media only screen and (min-width: 1025px) {
+            body {
+                font-size: 18px;
+            }
+            .slider {
+                width: 80%;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
-    <!-- Slick Carouselのスタイルシートを追加 -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
-
-
-
 <body>
-
 <header>
     <div class="container">
         <h1>Reina Hamasaki's Portfolio</h1>
-        
         <nav>
             <a href="#About_Me">About Me</a>
             <a href="#skills">Skill</a>
@@ -277,117 +319,133 @@
                 <img src="Instagram_Glyph_Gradient.png" class="icon">
             </a>
         </nav>
-
-    
     </div>
-    
 </header>
-
 <section id="About_Me" class="container">
     <h2>About Me</h2>
     <div class="profile-info">
-        <ul>
-            <li><strong>名前:</strong> 濱崎麗奈</li>
-            <li><strong>所属:</strong> 武蔵野大学データサイエンス学部　石橋ゼミ</li>
-            <li><strong>趣味:</strong> 旅行・スキューバダイビング・音楽を聴く</li>
-            <li><strong>言語:</strong> 英語（日常会話レベル）・韓国語（日常会話レベル）
-            <li><strong>最近興味があること:</strong> 対話型AIの開発・DB設計</li>
-            <li><strong>目標:</strong> 社会課題を発見し革新的なアプローチを追求して問題解決に取り組む</li>
-            <br>
-            <li><strong>資格:</strong> <br>実用技能英語検定２級<br>ダイビングライセンス 　PADI:アドヴァンスド・オープン・ウォーター(AOW)取得済
-            <br>
-            <li><strong>アルバイト:</strong><br> 東京ディズニーランド・東京ディズニーシーキャスト（2017~2022）
-            <br>株式会社やる気スイッチグループ　プログラミング教育HALLO　塾講師（小学・中学クラス / 2020~2022）
-            <br>株式会社ノジマ　カスタマーセンター総合窓口業務（2021~現在）</li>
-        </ul>
+        <style>
+            .profile-details li {
+                font-size: 17px; /* 全体の文字サイズを14pxに調整 */
+            }
+            
+            .profile-details p {
+                font-size: 17px; /* プロフィールの説明文も同様に調整 */
+            }
+        </style>
+        
+        <div class="profile-details">
+            <ul>
+                <li><strong>名前:</strong> 濱崎麗奈</li>
+                <li><strong>所属:</strong> 武蔵野大学データサイエンス学部 石橋ゼミ</li>
+                <li><strong>趣味:</strong> 旅行・スキューバダイビング・音楽を聴く</li>
+                <li><strong>言語:</strong> 英語（日常会話レベル）・韓国語（日常会話レベル）</li>
+                <li><strong>最近興味があること:</strong> 対話型AIの開発・DB設計</li>
+                <li><strong>目標:</strong> 社会課題を発見し革新的なアプローチを追求して問題解決に取り組む</li>
+                <br>
+                <li><strong>資格:</strong><br>実用技能英語検定２級<br>ダイビングライセンス PADI:アドヴァンスド・オープン・ウォーター(AOW)取得済</li>
+                <br>
+                <li><strong>アルバイト:</strong><br>東京ディズニーランド・東京ディズニーシーキャスト（2017~2022
+                <br>株式会社やる気スイッチグループ プログラミング教育HALLO 塾講師        <br>（小学・中学クラス / 2020~2022）
+                <br>株式会社ノジマ カスタマーセンター総合窓口業務（2021~現在）</li>
+            </ul>
+        </div>
         <img src="8E3CD550-12EC-4304-99EE-69FF80179592_1_201_a.jpeg" alt="Profile Image" class="profile-img">
         <br>
-        <strong><br>常に新しい課題に取り組み、新しい技術に触れ、革新的なアプローチを追求することが好きで様々な種類のイベント・アルバイトの経験を続けてきました。
         <br>
-        それぞれのプロジェクトやチームにおいて効果的なコミュニケーションと協力を重視し、目標達成に向けて積極的に活動してきました。
+        <strong><br>常に新しい課題に取り組み、新しい技術に触れ、革新的なアプローチを追求することが好きで
+        <br>様々な種類のイベント・アルバイトの経験を続けてきました。
         <br>
-        <div class="blue-line-container">
-        <strong>将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。<br></strong>
+        それぞれのプロジェクトやチームにおいて効果的なコミュニケーションと協力を重視し、目標達成に向けて積極的に活動してきました。</strong>
+        <div style="width: 100%;">
+            <div class="blue-line-container">
+                <strong>将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。<br></strong>
+            </div>
+            <div style="clear: both;"></div>
+            <h3 style="color: #007bff; text-align: left; margin-top: 20px;">実績</h3>
+        </div>
+        
+        <ul class="star-list">
+        <li style="font-size: 18px;"><strong>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</strong></li> 
         <br>
-    </div>
-    <br>
-<h3 style="color: #007bff;">実績</h3>
-<ul class="star-list">
-    <li style="font-size: 18px;"><strong>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</strong></li> 
-    <br>
-    <li style="font-size: 18px;"><strong>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</strong></li>
-    <br>
-    <h3 style="color: #007bff;">インターン参加</h3>
-    <li style="font-size: 18px;"><strong>株式会社矢崎総業　　画像分析による変則信号通知機能ドライブレコーダー付随型システムの発案・企画</strong> </li> 
-    <br>
-    <li style="font-size: 18px;"><strong>エヌ・ティ・ティ・アドバンステクノロジ株式会社(NTT-AT)　　工場内温湿度の制御・モニタリングwebアプリケーションの企画・開発</strong> </li> 
-    <br>
-    <li style="font-size: 18px;"><strong>株式会社ベネッセコーポレーション　　ハッカソン型インターンシップ "User-Based Digital Competition" 参加<br>
-        　 オンライン講義同時双方向型プラットフォーム・コミュニケーションサービスの企画・開発</strong> </li> 
-</ul>
-
-
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+        <li style="font-size: 18px;"><strong>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</strong></li>
+        <br>
+        <style>
+            .intern-list li {
+                margin-bottom: 5px; 
+                line-height: 2;
+            }
+        </style>
+              
+        <h3 style="color: #007bff; text-align: left; margin: 10px 0 5px 0;">インターン参加</h3>
+        
+        <ul class="intern-list">
+            <li style="font-size: 18px;"><strong>株式会社矢崎総業 画像分析による変則信号通知機能ドライブレコーダー付随型システムの発案・企画</strong></li>
+            <li style="font-size: 18px;"><strong>エヌ・ティ・ティ・アドバンステクノロジ株式会社(NTT-AT) 工場内温湿度の制御・モニタリングwebアプリケーションの企画・開発</strong></li>
+            <li style="font-size: 18px;"><strong>株式会社ベネッセコーポレーション ハッカソン型インターンシップ "User-Based Digital Competition" 参加</strong><br>
+            <span style="margin-left: 20px;"><strong>オンライン講義同時双方向型プラットフォーム・コミュニケーションサービスの企画・開発</strong></span>
+            </li>
+        </ul>
+        
+</section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <br><br><br>
 <section id="skills" class="container">
-<h2>Skill　　　</h2>
-
-<div class="skill-card">
-    <i class="fab fa-python icon"></i>
-    <span>Python</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-html5 icon"></i>
-    <span>HTML</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-css3-alt icon"></i>
-    <span>CSS</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-js-square icon"></i>
-    <span>JavaScript</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-php icon"></i>
-    <span>PHP</span>
-</div>
-<div class="skill-card">
-    <i class="fas fa-cube icon"></i>
-    <span>NumPy</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-react icon"></i>
-    <span>React</span>
-</div>
-<div class="skill-card">
-    <i class="fas fa-table icon"></i>
-    <span>Pandas</span>
-</div>
-<div class="skill-card">
-    <i class="fas fa-chart-bar icon"></i>
-    <span>Matplotlib</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-slack icon"></i>
-    <span>Slack</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-android icon"></i>
-    <span>Android Studio</span>
-</div>
-<div class="skill-card">
-    <i class="fas fa-code icon"></i>
-    <span>Visual Studio Code</span>
-</div>
-<div class="skill-card">
-    <i class="fab fa-github icon"></i>
-    <span>GitHub</span>
-</div>
-<li style="font-size: 18px;"><strong>Webサイト/アプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong></li> 
+    <h2>Skill</h2>
+    <div class="skill-card">
+        <i class="fab fa-python icon"></i>
+        <span>Python</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-html5 icon"></i>
+        <span>HTML</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-css3-alt icon"></i>
+        <span>CSS</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-js-square icon"></i>
+        <span>JavaScript</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-php icon"></i>
+        <span>PHP</span>
+    </div>
+    <div class="skill-card">
+        <i class="fas fa-cube icon"></i>
+        <span>NumPy</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-react icon"></i>
+        <span>React</span>
+    </div>
+    <div class="skill-card">
+        <i class="fas fa-table icon"></i>
+        <span>Pandas</span>
+    </div>
+    <div class="skill-card">
+        <i class="fas fa-chart-bar icon"></i>
+        <span>Matplotlib</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-slack icon"></i>
+        <span>Slack</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-android icon"></i>
+        <span>Android Studio</span>
+    </div>
+    <div class="skill-card">
+        <i class="fas fa-code icon"></i>
+        <span>Visual Studio Code</span>
+    </div>
+    <div class="skill-card">
+        <i class="fab fa-github icon"></i>
+        <span>GitHub</span>
+    </div>
+    <li style="font-size: 18px;"><strong>Webサイト/アプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong></li> 
 </section>
 <br><br><br>
 <section id="projects" class="container">
@@ -395,19 +453,20 @@
     <div class="slider">
         <div class="slide-item">
             <h2>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ</h2>
-            <p>触楽入門ワークショップ　～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
-            <br>日常生活のなかにある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ、
-            <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを提案し、Pythonで制作したプロトタイプを制作して発表しました。</p>
+            <p>触楽入門ワークショップ<br>～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
+            <br>日常生活にある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ
+            <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを
+            <br>提案し、Pythonで制作したプロトタイプを制作して発表しました。</p>
             <iframe src="https://player.vimeo.com/video/282970531?h=38b6c90791" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="slide-item">
             <h2>日本科学未来館ビジョナリーキャンプ・プロジェクト</h2>
-            <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト「自分カフェ」を発表しました。
-                <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで、
-                <br>仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを実際に仮想空間上に制作しました。
-                <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり鼓舞してくれたりする
-                <br>「自分が自分を助ける」社会を提案しました。</p>
-            <br>
+            <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト
+                <br>「自分カフェ」を発表しました。
+                <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを
+                <br>実際に仮想空間上に制作しました。
+                <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり
+                <br>鼓舞してくれたりする「自分が自分を助ける」社会を提案しました。</p>
             <ul>
                 <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
                 <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
@@ -415,7 +474,6 @@
         </div>
     </div>
 </section>
-
 <section id="projects" class="container">
     <div class="slider">
         <div class="slide-item">
@@ -440,25 +498,23 @@
         </div>
         <div class="slide-item">
             <h2>SDGsビジネスモデル考案</h2>
-            <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、ビジネスモデルを考案し発表しました。</p>
+            <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、<br>ビジネスモデルを考案し発表しました。</p>
             <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjy17NQBA5KUNzcHx-GuLi5sIi-5nUJMhLCNHy0zqxwj5tAux-gK79K62GVchlciSlTYdRSPnZxYYn/embed?start=false&loop=false&delayms=3000"></iframe>
         </div>
-            <div class="slide-item">
+        <div class="slide-item">
             <h2>SDGsビジネスモデル考案</h2>
             <p>持続可能な農業を目指す上での活動として堆肥茶について着目し、ビジネスモデルを考案し発表しました。</p>
             <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3NaihdmApltc35EHvG0QLowJS6u5t77-l36IlHOU3LhzoioMnO2gb4oz7lT90dFxP7j9YHgl4mWRw/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>  
     </div>
 </section>
-
-<!-- Slick Carouselのスクリプトを追加 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         $('.slider').each(function() {
             $(this).slick({
-                dots: true, /* ドットナビゲーションを有効化 */
+                dots: true, 
                 infinite: true,
                 speed: 300,
                 slidesToShow: 1,
@@ -469,24 +525,21 @@
         });
     });
 </script>
-
 <section id="contact" class="container">
     <h2>Contact</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ4TQJ_mwrKLBV4AVeM-biGlQsltWX65orAKSl60hLYuCR0w/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>    
 </section>
-
 <footer class="footer mt-auto text-center">
     <div class="container-sm my-2">
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card-body">
-                    <p class="text-center mt-3">このサイトはPCからの閲覧を推奨していますが、マルチデバイスでの閲覧にも対応しています。<br>©︎ 2016-2024 Reina Hamasaki</p>
+                    <p class="text-center mt-3">このサイトはPCからの閲覧を推奨していますが、<br>マルチデバイスでの閲覧にも対応しています。<br>©︎ 2016-2024 Reina Hamasaki</p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-
 <script>
     document.querySelector('nav').addEventListener('click', function(event) {
         if (event.target.tagName === 'A') {
@@ -499,6 +552,6 @@
         }
     });
 </script>
-
 </body>
 </html>
+
