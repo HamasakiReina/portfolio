@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght=400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
@@ -296,262 +296,317 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* ローディング画面のスタイル */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #343a40;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease-out; /* フェードアウトのためのトランジション */
+        }
+        #loadingScreen h1 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 70px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out infinite;
+        }
+        #loadingScreen p {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 20px;
+            text-align: center;
+            max-width: 80%;
+        }
+        @keyframes fadeIn {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
-<header>
-    <div class="container">
-        <h1>Reina Hamasaki's Portfolio</h1>
-        <nav>
-            <a href="#About_Me">About Me</a>
-            <a href="#skills">Skill</a>
-            <a href="#projects">Project</a>
-            <a href="#contact">Contact</a>
-            <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;">
-                <img src="logo-white.png" class="icon">
-            </a>
-            <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;">
-                <img src="github-mark-white.png" class="icon">
-            </a>
-            <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;">
-                <img src="Instagram_Glyph_Gradient.png" class="icon">
-            </a>
-        </nav>
+    <!-- ローディング画面 -->
+    <div id="loadingScreen">
+        <h1>WELCOME!</h1>
+        <p><strong>本サイトはPCからの閲覧を推奨していますが、マルチデバイスでの閲覧にも対応しています。<br>©︎ 2016-2024 Reina Hamasaki</strong></p>
     </div>
-</header>
-<section id="About_Me" class="container">
-    <h2>About Me</h2>
-    <div class="profile-info">
-        <style>
-            .profile-details li {
-                font-size: 17px; 
-            }
-            
-            .profile-details p {
-                font-size: 17px; 
-            }
-        </style>
-        
-        <div class="profile-details">
-            <ul>
-                <li><strong>名前:</strong> 濱崎麗奈</li>
-                <li><strong>所属:</strong> 武蔵野大学データサイエンス学部 石橋ゼミ</li>
-                <li><strong>趣味:</strong> 旅行・スキューバダイビング・音楽を聴く</li>
-                <li><strong>言語:</strong> 英語・韓国語</li>
-                <li><strong>最近興味があること:</strong> 対話型AIの開発・DB設計</li>
-                <li><strong>目標:</strong> 社会課題を見つけ、革新的なアプローチで問題解決を行う</li>
-                <br>
-                <li><strong>資格:</strong><br>実用技能英語検定２級<br>ダイビングライセンス PADI:アドヴァンスド・オープン・ウォーター(AOW)</li>
-                <br>
-                <li><strong>アルバイト:</strong><br>東京ディズニーランド・東京ディズニーシーキャスト（2017~2022)
-                <br>株式会社やる気スイッチグループ プログラミング教育HALLO 塾講師<br>（小学・中学クラス / 2020~2022）
-                <br>株式会社ノジマ カスタマーセンター総合窓口業務（2021~現在）</li>
-            </ul>
-        </div>
-        <img src="8E3CD550-12EC-4304-99EE-69FF80179592_1_201_a.jpeg" alt="Profile Image" class="profile-img">
-        <br>
-        <br>
-        <strong><br>常に新しい課題に取り組み、新しい技術に触れ、革新的なアプローチを追求することが好きで
-        <br>様々な種類のイベント・アルバイトの経験を続けてきました。
-        <br>
-        それぞれのプロジェクトやチームにおいて効果的なコミュニケーションと協力を重視し、目標達成に向けて積極的に活動してきました。</strong>
-        <div style="width: 100%;">
-            <div class="blue-line-container">
-                <strong>将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。<br></strong>
-            </div>
-            <div style="clear: both;"></div>
-            <br>
-            <h3 style="color: #007bff; text-align: left; margin-top: 0; margin-bottom: 0;">実績</h3>
-        </div>
-        <ul class="star-list">
-        <li style="font-size: 18px;"><strong>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</strong></li> 
-        <li style="font-size: 18px;"><strong>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</strong></li>
-        <style>
-            .intern-list li {
-                margin-bottom: 5px; 
-                line-height: 2;
-            }
-        </style>
-            <br>
-         <h3 style="color: #007bff; text-align: left; margin-top: 0; margin-bottom: 0;">インターン参加</h3>
-        
-        <ul class="intern-list">
-            <li style="font-size: 18px;"><strong>株式会社矢崎総業<br>
-            <span style="margin-left: 20px;"> - 画像分析による変則信号通知機能ドライブレコーダー付随型システムの発案・企画</strong></li>
-            <li style="font-size: 18px;"><strong>エヌ・ティ・ティ・アドバンステクノロジ株式会社(NTT-AT)<br>
-            <span style="margin-left: 20px;"> - 工場内温湿度の制御・モニタリングwebアプリケーションの企画・開発</strong></li>
-            <li style="font-size: 18px;"><strong>株式会社ベネッセコーポレーション ハッカソン型インターンシップ "User-Based Digital Competition" 参加</strong><br>
-            <span style="margin-left: 20px;"><strong> - オンライン講義同時双方向型プラットフォーム・コミュニケーションサービスの企画・開発</strong></span>
-            </li>
-        </ul>
-        
-</section>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<br><br><br>
-<section id="skills" class="container">
-    <h2>Skill</h2>
-    <div class="skill-card">
-        <i class="fab fa-python icon"></i>
-        <span>Python</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-html5 icon"></i>
-        <span>HTML</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-css3-alt icon"></i>
-        <span>CSS</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-js-square icon"></i>
-        <span>JavaScript</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-php icon"></i>
-        <span>PHP</span>
-    </div>
-    <div class="skill-card">
-        <i class="fas fa-cube icon"></i>
-        <span>NumPy</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-react icon"></i>
-        <span>React</span>
-    </div>
-    <div class="skill-card">
-        <i class="fas fa-table icon"></i>
-        <span>Pandas</span>
-    </div>
-    <div class="skill-card">
-        <i class="fas fa-chart-bar icon"></i>
-        <span>Matplotlib</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-slack icon"></i>
-        <span>Slack</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-android icon"></i>
-        <span>Android Studio</span>
-    </div>
-    <div class="skill-card">
-        <i class="fas fa-code icon"></i>
-        <span>Visual Studio Code</span>
-    </div>
-    <div class="skill-card">
-        <i class="fab fa-github icon"></i>
-        <span>GitHub</span>
-    </div>
-    <li style="font-size: 18px;"><strong>Webサイト/アプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong></li> 
-</section>
-<br><br><br>
-<section id="projects" class="container">
-    <h2>Project</h2>
-    <div class="slider">
-        <div class="slide-item">
-            <h2>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ</h2>
-            <p>触楽入門ワークショップ<br>～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
-            <br>日常生活にある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ
-            <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを
-            <br>提案し、Pythonで制作したプロトタイプを制作して発表しました。</p>
-            <iframe src="https://player.vimeo.com/video/282970531?h=38b6c90791" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <header>
+        <div class="container">
+            <h1>Reina Hamasaki's Portfolio</h1>
+            <nav>
+                <a href="#About_Me">About Me</a>
+                <a href="#skills">Skill</a>
+                <a href="#projects">Project</a>
+                <a href="#contact">Contact</a>
+                <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;">
+                    <img src="logo-white.png" class="icon">
+                </a>
+                <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;">
+                    <img src="github-mark-white.png" class="icon">
+                </a>
+                <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;">
+                    <img src="Instagram_Glyph_Gradient.png" class="icon">
+                </a>
+            </nav>
         </div>
-        <div class="slide-item">
-            <h2>日本科学未来館ビジョナリーキャンプ・プロジェクト</h2>
-            <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト
-                <br>「自分カフェ」を発表しました。
-                <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを
-                <br>実際に仮想空間上に制作しました。
-                <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり
-                <br>鼓舞してくれたりする「自分が自分を助ける」社会を提案しました。</p>
-            <ul>
-                <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
-                <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
+    </header>
+    <section id="About_Me" class="container">
+        <h2>About Me</h2>
+        <div class="profile-info">
+            <style>
+                .profile-details li {
+                    font-size: 17px; 
+                }
+                
+                .profile-details p {
+                    font-size: 17px; 
+                }
+            </style>
+            
+            <div class="profile-details">
+                <ul>
+                    <li><strong>名前:</strong> 濱崎麗奈</li>
+                    <li><strong>所属:</strong> 武蔵野大学データサイエンス学部 石橋ゼミ</li>
+                    <li><strong>趣味:</strong> 旅行・スキューバダイビング・音楽を聴く</li>
+                    <li><strong>言語:</strong> 英語・韓国語</li>
+                    <li><strong>最近興味があること:</strong> 対話型AIの開発・DB設計</li>
+                    <li><strong>目標:</strong> 社会課題を見つけ、革新的なアプローチで問題解決を行う</li>
+                    <br>
+                    <li><strong>資格:</strong><br>実用技能英語検定２級<br>ダイビングライセンス PADI:アドヴァンスド・オープン・ウォーター(AOW)</li>
+                    <br>
+                    <li><strong>アルバイト:</strong><br>東京ディズニーランド・東京ディズニーシーキャスト（2017~2022)
+                    <br>株式会社やる気スイッチグループ プログラミング教育HALLO 塾講師<br>（小学・中学クラス / 2020~2022）
+                    <br>株式会社ノジマ カスタマーセンター総合窓口業務（2021~現在）</li>
+                </ul>
+            </div>
+            <img src="8E3CD550-12EC-4304-99EE-69FF80179592_1_201_a.jpeg" alt="Profile Image" class="profile-img">
+            <br>
+            <br>
+            <strong><br>常に新しい課題に取り組み、新しい技術に触れ、革新的なアプローチを追求することが好きで
+            <br>様々な種類のイベント・アルバイトの経験を続けてきました。
+            <br>
+            それぞれのプロジェクトやチームにおいて効果的なコミュニケーションと協力を重視し、目標達成に向けて積極的に活動してきました。</strong>
+            <div style="width: 100%;">
+                <div class="blue-line-container">
+                    <strong>将来は社会上における課題を発見し、革新的なソリューションを提案して問題の解決に取り組む人材になりたいです。<br></strong>
+                </div>
+                <div style="clear: both;"></div>
+                <br>
+                <h3 style="color: #007bff; text-align: left; margin-top: 0; margin-bottom: 0;">実績</h3>
+            </div>
+            <ul class="star-list">
+            <li style="font-size: 18px;"><strong>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ参加</strong></li> 
+            <li style="font-size: 18px;"><strong>日本科学未来館ビジョナリーキャンプ・プロジェクト参加</strong></li>
+            <style>
+                .intern-list li {
+                    margin-bottom: 5px; 
+                    line-height: 2;
+                }
+            </style>
+                <br>
+            <h3 style="color: #007bff; text-align: left; margin-top: 0; margin-bottom: 0;">インターン参加</h3>
+            
+            <ul class="intern-list">
+                <li style="font-size: 18px;"><strong>株式会社矢崎総業<br>
+                <span style="margin-left: 20px;"> - 画像分析による変則信号通知機能ドライブレコーダー付随型システムの発案・企画</strong></li>
+                <li style="font-size: 18px;"><strong>エヌ・ティ・ティ・アドバンステクノロジ株式会社(NTT-AT)<br>
+                <span style="margin-left: 20px;"> - 工場内温湿度の制御・モニタリングwebアプリケーションの企画・開発</strong></li>
+                <li style="font-size: 18px;"><strong>株式会社ベネッセコーポレーション ハッカソン型インターンシップ "User-Based Digital Competition" 参加</strong><br>
+                <span style="margin-left: 20px;"><strong> - オンライン講義同時双方向型プラットフォーム・コミュニケーションサービスの企画・開発</strong></span>
+                </li>
             </ul>
+            
+    </section>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <br><br><br>
+    <section id="skills" class="container">
+        <h2>Skill</h2>
+        <div class="skill-card">
+            <i class="fab fa-python icon"></i>
+            <span>Python</span>
         </div>
-    </div>
-</section>
-<section id="projects" class="container">
-    <div class="slider">
-        <div class="slide-item">
-            <h2>カラオケアプリケーション</h2>
-            <p>動画からボーカルを分離し、入力した声を配列に変換してコサイン類似度システムを使用し採点を行うアプリケーションを作成しました。</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUFeAkI7llOaOUomWIq2QLXSaj8rhWSmVZerxKoTGf1hHli5fMc5xR2mK9YcKqZYlduDIHCN4taN-A/embed?start=false&loop=true&delayms=30000"></iframe>
+        <div class="skill-card">
+            <i class="fab fa-html5 icon"></i>
+            <span>HTML</span>
         </div>
-        <div class="slide-item">
-            <h2>ブランドロゴ判別webアプリケーション</h2>
-            <p>画像認識技術をプログラミングし、実在するブランドのロゴ画像を分析しどこのブランドか判別が容易になるアプリケーションを作成しました。</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6sojed0x9E4bxDEeJCH0UPn2xa3jLBaRUk0g3k1Gel55CCHBNsHtAQpGQe64qFIBcRJotpkXcwKSI/embed?start=false&loop=true&delayms=30000"></iframe>
+        <div class="skill-card">
+            <i class="fab fa-css3-alt icon"></i>
+            <span>CSS</span>
         </div>
-        <div class="slide-item">
-            <h2>風邪の原因を予測するベイジアンネットワークの作成</h2>
-            <p>推論モデルと組み合わせ診断を行う関数を使用し、流行状況を分析した上で個人の症状と生活習慣から風邪の原因を予測して、適切な対策を講じることが可能なベイジアンネットワークシステムデモを開発しました。</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMBVuGqU0cFEQRtCQ_Kl2PEeBweneAM5ZLAE2TJ5z3zoGhilKanKbsakVr7CxBvPHZ9BUXWt2fMDyL/embed?start=false&loop=true&delayms=30000"></iframe>
+        <div class="skill-card">
+            <i class="fab fa-js-square icon"></i>
+            <span>JavaScript</span>
         </div>
-        <div class="slide-item">
-            <h2>知識ベース、知識処理を応用したデータベースシステムの作成</h2>
-            <p>環境白書内の画像・文書・音声データを対象に、環境に関する多様なデータを時空間的な属性とともに統合し、管理するデータベースシステムを構築しました。</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ4a0s4abzH-SrjEccFJZ52pA9TVJEhRAYPnQugTlFG0VJN5NXGx0FsoRiXGEts2KWX8qdgbY2F3Dvl/embed?start=false&loop=false&delayms=60000"></iframe>
+        <div class="skill-card">
+            <i class="fab fa-php icon"></i>
+            <span>PHP</span>
         </div>
-        <div class="slide-item">
-            <h2>SDGsビジネスモデル考案</h2>
-            <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、<br>ビジネスモデルを考案し発表しました。</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjy17NQBA5KUNzcHx-GuLi5sIi-5nUJMhLCNHy0zqxwj5tAux-gK79K62GVchlciSlTYdRSPnZxYYn/embed?start=false&loop=false&delayms=3000"></iframe>
+        <div class="skill-card">
+            <i class="fas fa-cube icon"></i>
+            <span>NumPy</span>
         </div>
-        <div class="slide-item">
-            <h2>SDGsビジネスモデル考案</h2>
-            <p>持続可能な農業を目指す上での活動として堆肥茶について着目し、ビジネスモデルを考案し発表しました。</p>
-            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3NaihdmApltc35EHvG0QLowJS6u5t77-l36IlHOU3LhzoioMnO2gb4oz7lT90dFxP7j9YHgl4mWRw/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        </div>  
-    </div>
-</section>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.slider').each(function() {
-            $(this).slick({
-                dots: true, 
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true,
-                autoplay: true,
-                autoplaySpeed: 20000,
+        <div class="skill-card">
+            <i class="fab fa-react icon"></i>
+            <span>React</span>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-table icon"></i>
+            <span>Pandas</span>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-chart-bar icon"></i>
+            <span>Matplotlib</span>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-slack icon"></i>
+            <span>Slack</span>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-android icon"></i>
+            <span>Android Studio</span>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-code icon"></i>
+            <span>Visual Studio Code</span>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-github icon"></i>
+            <span>GitHub</span>
+        </div>
+        <li style="font-size: 18px;"><strong>Webサイト/アプリケーション開発・Androidアプリケーション開発・データ分析・画像処理・自然言語処理・スクレイピング</strong></li> 
+    </section>
+    <br><br><br>
+    <section id="projects" class="container">
+        <h2>Project</h2>
+        <div class="slider">
+            <div class="slide-item">
+                <h2>慶應義塾大学湘南藤沢キャンパス未来構想キャンプ</h2>
+                <p>触楽入門ワークショップ<br>～ソーシャルロボット x ハプティックス = 人工知能社会の未来～に参加しました。
+                <br>日常生活にある「さわり心地」を見つけ出して表現する方法論を学習し、ハプティックス技術を組み合わせ
+                <br>人工知能との対話を前提とした人間とロボットが円滑にコミュニケーションできる情報環境のデザインを
+                <br>提案し、Pythonで制作したプロトタイプを制作して発表しました。</p>
+                <iframe src="https://player.vimeo.com/video/282970531?h=38b6c90791" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="slide-item">
+                <h2>日本科学未来館ビジョナリーキャンプ・プロジェクト</h2>
+                <p>コミュニケーションというテーマを軸に過去の自分との対話を目標とするプロジェクト
+                    <br>「自分カフェ」を発表しました。
+                    <br>悩みを抱えた現在の自分が過去にアーカイブした自身の映像と音声を呼び出し、SR技術を使ってその表情や声を変化させることで仮想空間上で過去の自分と対話することを可能にするシステムのプロトタイプを
+                    <br>実際に仮想空間上に制作しました。
+                    <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり
+                    <br>鼓舞してくれたりする「自分が自分を助ける」社会を提案しました。</p>
+                <ul>
+                    <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
+                    <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="container">
+        <div class="slider">
+            <div class="slide-item">
+                <h2>カラオケアプリケーション</h2>
+                <p>動画からボーカルを分離し、入力した声を配列に変換してコサイン類似度システムを使用し採点を行うアプリケーションを作成しました。</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSUFeAkI7llOaOUomWIq2QLXSaj8rhWSmVZerxKoTGf1hHli5fMc5xR2mK9YcKqZYlduDIHCN4taN-A/embed?start=false&loop=true&delayms=30000"></iframe>
+            </div>
+            <div class="slide-item">
+                <h2>ブランドロゴ判別webアプリケーション</h2>
+                <p>画像認識技術をプログラミングし、実在するブランドのロゴ画像を分析しどこのブランドか判別が容易になるアプリケーションを作成しました。</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6sojed0x9E4bxDEeJCH0UPn2xa3jLBaRUk0g3k1Gel55CCHBNsHtAQpGQe64qFIBcRJotpkXcwKSI/embed?start=false&loop=true&delayms=30000"></iframe>
+            </div>
+            <div class="slide-item">
+                <h2>風邪の原因を予測するベイジアンネットワークの作成</h2>
+                <p>推論モデルと組み合わせ診断を行う関数を使用し、流行状況を分析した上で個人の症状と生活習慣から風邪の原因を予測して、適切な対策を講じることが可能なベイジアンネットワークシステムデモを開発しました。</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTMBVuGqU0cFEQRtCQ_Kl2PEeBweneAM5ZLAE2TJ5z3zoGhilKanKbsakVr7CxBvPHZ9BUXWt2fMDyL/embed?start=false&loop=true&delayms=30000"></iframe>
+            </div>
+            <div class="slide-item">
+                <h2>知識ベース、知識処理を応用したデータベースシステムの作成</h2>
+                <p>環境白書内の画像・文書・音声データを対象に、環境に関する多様なデータを時空間的な属性とともに統合し、管理するデータベースシステムを構築しました。</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ4a0s4abzH-SrjEccFJZ52pA9TVJEhRAYPnQugTlFG0VJN5NXGx0FsoRiXGEts2KWX8qdgbY2F3Dvl/embed?start=false&loop=false&delayms=60000"></iframe>
+            </div>
+            <div class="slide-item">
+                <h2>SDGsビジネスモデル考案</h2>
+                <p>SDGs目標14番「海の豊かさを守ろう」についての現状を知ってもらうツアーを考え、<br>ビジネスモデルを考案し発表しました。</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQjy17NQBA5KUNzcHx-GuLi5sIi-5nUJMhLCNHy0zqxwj5tAux-gK79K62GVchlciSlTYdRSPnZxYYn/embed?start=false&loop=false&delayms=3000"></iframe>
+            </div>
+            <div class="slide-item">
+                <h2>SDGsビジネスモデル考案</h2>
+                <p>持続可能な農業を目指す上での活動として堆肥茶について着目し、ビジネスモデルを考案し発表しました。</p>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3NaihdmApltc35EHvG0QLowJS6u5t77-l36IlHOU3LhzoioMnO2gb4oz7lT90dFxP7j9YHgl4mWRw/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>  
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').each(function() {
+                $(this).slick({
+                    dots: true, 
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                    autoplay: true,
+                    autoplaySpeed: 20000,
+                });
             });
         });
-    });
-</script>
-<section id="contact" class="container">
-    <h2>Contact</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ4TQJ_mwrKLBV4AVeM-biGlQsltWX65orAKSl60hLYuCR0w/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>    
-</section>
-<footer class="footer mt-auto text-center">
-    <div class="container-sm my-2">
-        <div class="row justify-content-center">
-            <div class="col">
-                <div class="card-body">
-                    <p class="text-center mt-3">このサイトはPCからの閲覧を推奨していますが、<br>マルチデバイスでの閲覧にも対応しています。<br>©︎ 2016-2024 Reina Hamasaki</p>
+
+        // ローディング画面を5秒後に消すスクリプト
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0'; // フェードアウト開始
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none'; // 完全に消す
+                }, 1000); // フェードアウトの時間と一致させる
+            }, 3000);
+        });
+
+        document.querySelector('nav').addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                event.preventDefault(); 
+                const targetId = event.target.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId); 
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ4TQJ_mwrKLBV4AVeM-biGlQsltWX65orAKSl60hLYuCR0w/viewform?embedded=true" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>    
+    </section>
+    <footer class="footer mt-auto text-center">
+        <div class="container-sm my-2">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div class="card-body">
+                        <p class="text-center mt-3" style="font-family: 'M PLUS Rounded 1c';">
+                            このサイトはPCからの閲覧を推奨していますが、<br>
+                            マルチデバイスでの閲覧にも対応しています。<br>
+                        <strong>©︎ 2016-2024 Reina Hamasaki</strong>
+                        </p>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-<script>
-    document.querySelector('nav').addEventListener('click', function(event) {
-        if (event.target.tagName === 'A') {
-            event.preventDefault(); 
-            const targetId = event.target.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId); 
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    });
-</script>
+    </footer>
 </body>
 </html>
 
