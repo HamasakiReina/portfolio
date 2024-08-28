@@ -96,7 +96,7 @@
             max-width: 300px;
             height: auto;
             object-fit: cover;
-            margin-left:　-100px;
+            margin-left: -100px;
             margin-right: 100px;
             margin-top: 20px;
             display: block;
@@ -357,20 +357,55 @@
             display: none; 
         }
 
-
+        /* メニューボタンのスタイルとアニメーションの追加 */
         #menuIcon {
-            width: 80px;
-            height: 80px;
-            background-color: transparent;
-            border-radius: 50%;
-            color: #000;
-            text-align: center;
-            line-height: 80px;
-            cursor: pointer;
-            font-size: 50px;
-            box-shadow: none;
-            transition: background-color 0.3s;
-        }
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#menuIcon::before, #menuIcon::after, #menuIcon span {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+#menuIcon span {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#menuIcon::before {
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+#menuIcon::after {
+    top: 65%;
+    transform: translateX(-50%);
+}
+
+#menuButton.menu-open #menuIcon::before {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#menuButton.menu-open #menuIcon::after {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#menuButton.menu-open #menuIcon span {
+    opacity: 0;
+}
 
 
         nav a {
@@ -383,38 +418,42 @@
         }
 
         #navMenu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            background-color: #343a40;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            font-family: 'Montserrat', sans-serif;
-        }
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: transparent; /* 背景色を透明に設定 */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        #navMenu a {
-            display: block;
-            padding: 10px 20px;
-            color: #000; 
-            text-decoration: none;
-            background-color: transparent; 
-            border-bottom: 1px solid transparent; 
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            transform: translateY(-10px);
-        }
+#navMenu a {
+    display: block;
+    padding: 10px 20px;
+    color: #000 !important; /* 文字色を黒に設定 */
+    text-decoration: none;
+    background-color: transparent !important; /* 背景色を透明に設定 */
+    border: none; /* 枠線をなしに設定 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
 
-        #navMenu a:hover {
-            background-color: transparent;
-        }
+#navMenu a:hover {
+    background-color: transparent !important; /* ホバー時の背景色を透明に設定 */
+    color: #007bff !important; /* ホバー時の文字色を青に設定 */
+}
 
-        .menu-open #navMenu a {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
+.menu-open #navMenu a {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+        
+
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
@@ -428,7 +467,9 @@
 
 
     <div id="menuButton">
-        <div id="menuIcon">&#9776;</div>
+        <div id="menuIcon">
+            <span></span>
+        </div>
         <div id="navMenu">
             <a href="#About_Me">ABOUTME</a>
             <a href="#skills">SKILL</a>
@@ -695,13 +736,15 @@
         // メニューボタンのスクリプト
         document.getElementById('menuIcon').addEventListener('click', function() {
             var navMenu = document.getElementById('navMenu');
+            var menuButton = document.getElementById('menuButton');
+            
             if (navMenu.style.display === 'none' || navMenu.style.display === '') {
                 navMenu.style.display = 'block';
                 setTimeout(function() {
-                    document.getElementById('menuButton').classList.add('menu-open'); // アニメーションを開始
+                    menuButton.classList.add('menu-open'); // アニメーションを開始
                 }, 10); 
             } else {
-                document.getElementById('menuButton').classList.remove('menu-open'); 
+                menuButton.classList.remove('menu-open'); 
                 setTimeout(function() {
                     navMenu.style.display = 'none';
                 }, 500); 
@@ -744,4 +787,3 @@
     </footer>
 </body>
 </html>
-
