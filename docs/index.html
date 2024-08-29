@@ -16,7 +16,7 @@
             color: #333;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* 横スクロールバーを隠す */
+            overflow-x: hidden; 
         }
         h1 {
             text-align: center;
@@ -42,7 +42,7 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            box-sizing: border-box; /* ボックスサイズを含める */
+            box-sizing: border-box; 
         }
         header {
             font-family: 'Noto Sans JP', sans-serif;
@@ -244,7 +244,7 @@
             box-sizing: border-box;
             bottom: 0; 
         }
-        /* モバイルデバイス用のスタイル */
+        /* モバイル */
         @media only screen and (max-width: 600px) {
             body {
                 font-size: 14px;
@@ -254,11 +254,11 @@
             }
             nav {
                 display: flex;
-                flex-direction: column; /* 縦並びにする */
+                flex-direction: column; 
                 align-items: center;
             }
             nav a {
-                margin: 5px 0; /* リンク間のマージンを調整 */
+                margin: 5px 0; 
             }
             .icon {
                 width: 40px;
@@ -267,7 +267,7 @@
             }
             nav a[href^="https://"] {
                 display: flex;
-                flex-direction: row; /* 画像リンクは横並び */
+                flex-direction: row; 
             }
         }
 
@@ -319,11 +319,11 @@
         #loadingScreen h1 {
             font-family: 'Bilbo', cursive; 
             font-size: 70px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             overflow: hidden;
-            border-right: 3px solid;
+            border-right: 1px solid;
             white-space: nowrap;
-            animation: typing 1s steps(20, end), blink-caret 0.75s step-end infinite;
+            animation: typing 0.8s steps(20, end), blink-caret 0.75s step-end infinite;
             padding-right: 20px; 
         }
 
@@ -344,7 +344,7 @@
             text-align: center;
             max-width: 80%;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out; 
+            transition: opacity 0.2s ease-in-out; 
         }
 
         #About_Me {
@@ -702,7 +702,7 @@
         });
 
         window.addEventListener('load', function() {
-    // ページがロードされたらスムーズに最上部にスクロール
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
     setTimeout(function() {
@@ -722,13 +722,14 @@
                 loadingScreen.style.display = 'none'; 
                 document.getElementById('menuButton').style.display = 'block';
                 
-                // ABOUT MEセクションをフェードイン
+
                 aboutMeSection.style.opacity = '1';
 
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // 再度スムーズにスクロール
+                window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                
             }, 1000); 
-        }, 1000); 
-    }, 2000); 
+        }, 800); 
+    }, 1500); 
 });
 
 
