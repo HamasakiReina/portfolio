@@ -254,35 +254,20 @@
             }
             nav {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            nav a {
-                margin: 5px;
-                flex-grow: 1;
-                text-align: center; 
-            }
-            .profile-info {
-                flex-direction: column;
+                flex-direction: column; /* 縦並びにする */
                 align-items: center;
             }
-            .profile-details {
-                margin-right: 0;
-            }
-            .profile-info img.profile-img {
-                max-width: 200px;
-                margin-top: 20px;
-            }
-            .skill-card {
-                width: calc(50% - 20px); 
-            }
-            .slider {
-                width: 100%;
+            nav a {
+                margin: 5px 0; /* リンク間のマージンを調整 */
             }
             .icon {
                 width: 40px;
                 height: 40px;
                 margin: 0 5px;
+            }
+            nav a[href^="https://"] {
+                display: flex;
+                flex-direction: row; /* 画像リンクは横並び */
             }
         }
 
@@ -824,4 +809,4 @@
 </body>
 </html>
 
-
+            
