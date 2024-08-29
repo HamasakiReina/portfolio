@@ -253,9 +253,13 @@
                 justify-content: center;
             }
             nav a {
-                margin: 5px;
-                flex-grow: 1;
-                text-align: center; /* アイコンとテキストを中央揃えにする */
+                flex-basis: 100%;
+                text-align: center;
+                margin: 5px 0;
+            }
+            nav a.icon {
+                flex-basis: auto;
+                margin: 0 5px;
             }
             .profile-info {
                 flex-direction: column;
@@ -489,13 +493,13 @@
                 <a href="#skills">SKILL</a>
                 <a href="#projects">WORK</a>
                 <a href="#contact">CONTACT</a>
-                <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;">
+                <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;" class="icon">
                     <img src="logo-white.png" class="icon">
                 </a>
-                <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;">
+                <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;" class="icon">
                     <img src="github-mark-white.png" class="icon">
                 </a>
-                <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;">
+                <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;" class="icon">
                     <img src="Instagram_Glyph_Gradient.png" class="icon">
                 </a>
             </nav>
@@ -798,5 +802,4 @@ window.addEventListener('load', function() {
     </footer>
 </body>
 </html>
-
 
