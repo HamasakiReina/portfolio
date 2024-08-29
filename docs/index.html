@@ -16,6 +16,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* 横スクロールバーを隠す */
         }
         h1 {
             text-align: center;
@@ -41,9 +42,10 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
+            box-sizing: border-box; /* ボックスサイズを含める */
         }
         header {
-            font-family: 'Noto Sans　JP', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
             background-color: #343a40;
             color: #fff;
             text-align: left;
@@ -103,10 +105,7 @@
             max-width: 300px;
             height: auto;
             object-fit: cover;
-            margin-left: -100px;
-            margin-right: 100px;
-            margin-top: 20px;
-            display: block;
+            margin: 20px 0;
         }
         .icon {
             width: 50px;
@@ -508,7 +507,7 @@
         </div>
     </header>
     
-    <section id="About_Me" class="container">
+    <section id="About_Me" class="container visible">
         <h2>ABOUT ME</h2>
         <div class="profile-info">
             <style>
@@ -712,9 +711,9 @@
             });
         });
 
-window.addEventListener('load', function() {
-    // ページがロードされたら最上部にスクロール
-    window.scrollTo(0, 0);
+        window.addEventListener('load', function() {
+    // ページがロードされたらスムーズに最上部にスクロール
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     
     setTimeout(function() {
         const loadingScreen = document.getElementById('loadingScreen');
@@ -732,27 +731,31 @@ window.addEventListener('load', function() {
                 loadingScreen.style.display = 'none'; 
                 document.getElementById('menuButton').style.display = 'block';
                 document.getElementById('About_Me').classList.add('visible'); 
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // 再度スムーズにスクロール
             }, 1000); 
         }, 1000); 
     }, 2000); 
-
-    function revealOnScroll() {
-        const sectionsAndSlides = document.querySelectorAll('section, .slide-item, .skill-card');
-        sectionsAndSlides.forEach((element) => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (elementTop < windowHeight - 50) { 
-                element.classList.add('visible');
-                if (element.classList.contains('skill-card')) {
-                    element.classList.add('skill-visible');
-                }
-            }
-        });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); 
 });
+
+
+
+        function revealOnScroll() {
+            const sectionsAndSlides = document.querySelectorAll('section, .slide-item, .skill-card');
+            sectionsAndSlides.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 50) { 
+                    element.classList.add('visible');
+                    if (element.classList.contains('skill-card')) {
+                        element.classList.add('skill-visible');
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); 
+
 
         document.getElementById('menuButton').style.display = 'none';
 
@@ -820,3 +823,5 @@ window.addEventListener('load', function() {
     </footer>
 </body>
 </html>
+
+
