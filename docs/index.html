@@ -77,6 +77,12 @@
             transform: translateY(50px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+        .slide-item {
+            border: 2px solid #cccccc; /* グレーの枠線 */
+            padding: 10px; /* 枠線とコンテンツの間に余白を追加 */
+            box-sizing: border-box; /* パディングを含めてボックスサイズを計算 */
+            border-radius: 20px; /* 角を少し丸める */
+        }
         .visible {
             opacity: 1;
             transform: translateY(0);
@@ -245,39 +251,42 @@
             bottom: 0; 
         }
         /* モバイル */
-        @media only screen and (max-width: 600px) {
-            body {
-                font-size: 14px;
-            }
-            .container {
-                padding: 10px;
-            }
-            nav {
-                display: flex;
-                flex-direction: column; 
-                align-items: center;
-            }
-            nav a {
-                margin: 5px 0; 
-            }
-            .icon {
-                width: 40px;
-                height: 40px;
-                margin: 0 5px;
-            }
-            .profile-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            .profile-info img.profile-img {
-                margin: 20px auto;
-            }
-            nav a[href^="https://"] {
-                display: flex;
-                flex-direction: row; 
-                justify-content: center;
-            }
-        }
+/* モバイル */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        padding: 10px;
+    }
+    nav {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    nav a {
+        margin: 5px 0; 
+    }
+    .icon {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+    }
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-info img.profile-img {
+        margin: 20px auto;
+    }
+    /* 画像付きリンクを横並びに変更 */
+    nav a[href^="https://"] {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+    }
+}
+
 
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
             body {
