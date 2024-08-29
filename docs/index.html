@@ -248,11 +248,14 @@
                 padding: 10px;
             }
             nav {
-                text-align: center;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             nav a {
-                display: block;
-                margin: 10px 0;
+                margin: 5px;
+                flex-grow: 1;
+                text-align: center; /* アイコンとテキストを中央揃えにする */
             }
             .profile-info {
                 flex-direction: column;
@@ -270,6 +273,11 @@
             }
             .slider {
                 width: 100%;
+            }
+            .icon {
+                width: 40px;
+                height: 40px;
+                margin: 0 5px;
             }
         }
 
@@ -325,13 +333,13 @@
             overflow: hidden;
             border-right: 3px solid;
             white-space: nowrap;
-            animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite; /* スピードを速く、なめらかに */
+            animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite;
             padding-right: 20px; 
         }
 
         @keyframes typing {
             from { width: 0; }
-            to { width: 250px; } /* テキストの長さに応じた幅に調整 */
+            to { width: 250px; }
         }
 
         @keyframes blink-caret {
@@ -357,7 +365,6 @@
             display: none; 
         }
 
-        /* メニューボタンのスタイルとアニメーションの追加 */
         #menuIcon {
             width: 80px;
             height: 80px;
@@ -421,7 +428,7 @@
             position: absolute;
             top: 60px;
             right: 0;
-            background-color: transparent; /* 背景色を透明に設定 */
+            background-color: transparent;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             overflow: hidden;
@@ -431,18 +438,18 @@
         #navMenu a {
             display: block;
             padding: 10px 20px;
-            color: #000 !important; /* 文字色を黒に設定 */
+            color: #000 !important; 
             text-decoration: none;
-            background-color: transparent !important; /* 背景色を透明に設定 */
-            border: none; /* 枠線をなしに設定 */
+            background-color: transparent !important; 
+            border: none;
             transition: opacity 0.3s ease, transform 0.3s ease;
             opacity: 0;
             transform: translateY(-10px);
         }
 
         #navMenu a:hover {
-            background-color: transparent !important; /* ホバー時の背景色を透明に設定 */
-            color: #007bff !important; /* ホバー時の文字色を青に設定 */
+            background-color: transparent !important; 
+            color: #007bff !important; 
         }
 
         .menu-open #navMenu a {
@@ -698,32 +705,29 @@
                 });
             });
         });
-// ローディング画面を操作するスクリプト
+
 window.addEventListener('load', function() {
     setTimeout(function() {
         const loadingScreen = document.getElementById('loadingScreen');
         const loadingText = document.getElementById('loadingText');
 
-        // オーバーレイの背景色の変更とテキストの表示
+
         loadingScreen.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        loadingScreen.style.transition = 'background-color 0s ease'; // 時間を1秒から0.5秒に短縮
-        loadingText.style.opacity = '1'; // テキストのフェードイン
-        loadingText.style.transition = 'opacity 0.2s ease'; // 表示速度を0.5秒から0.2秒に短縮
+        loadingScreen.style.transition = 'background-color 0s ease';
+        loadingText.style.opacity = '1'; 
+        loadingText.style.transition = 'opacity 0.2s ease'; 
 
         setTimeout(function() {
-            // ローディング画面のスライドアウト
+
             loadingScreen.style.transform = 'translateY(-100%)';
-            loadingScreen.style.transition = 'transform 0.5s ease-in-out'; // 時間を1秒から0.5秒に短縮
+            loadingScreen.style.transition = 'transform 0.5s ease-in-out'; 
             setTimeout(function() {
-                loadingScreen.style.display = 'none'; // ローディング画面を完全に消す
-                document.getElementById('menuButton').style.display = 'block'; // ローディング完了後にメニューボタンを表示
-            }, 500); // トランジションの時間を一致させる
-        }, 1000); // オーバーレイとテキストのアニメーション時間を短縮
-    }, 2000); // ローディング画面の表示時間をさらに短縮
+                loadingScreen.style.display = 'none'; 
+                document.getElementById('menuButton').style.display = 'block';
+            }, 1000); 
+        }, 1000); 
+    }, 2000); 
 });
-
-
-
 
 
         // 初期状態でメニューボタンを非表示にする
@@ -740,7 +744,7 @@ window.addEventListener('load', function() {
             }
         });
 
-        // メニューボタンのスクリプト
+
         document.getElementById('menuIcon').addEventListener('click', function() {
             var navMenu = document.getElementById('navMenu');
             var menuButton = document.getElementById('menuButton');
@@ -748,7 +752,7 @@ window.addEventListener('load', function() {
             if (navMenu.style.display === 'none' || navMenu.style.display === '') {
                 navMenu.style.display = 'block';
                 setTimeout(function() {
-                    menuButton.classList.add('menu-open'); // アニメーションを開始
+                    menuButton.classList.add('menu-open'); 
                 }, 10); 
             } else {
                 menuButton.classList.remove('menu-open'); 
@@ -794,3 +798,4 @@ window.addEventListener('load', function() {
     </footer>
 </body>
 </html>
+
