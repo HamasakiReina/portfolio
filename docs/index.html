@@ -325,22 +325,13 @@
             overflow: hidden;
             border-right: 3px solid;
             white-space: nowrap;
-            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-            padding-right: 15px; 
-        }
-        #loadingScreen p {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            font-weight: 300; 
-            font-size: 20px;
-            text-align: center;
-            max-width: 80%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out; 
+            animation: typing 1.5s steps(20, end), blink-caret 0.75s step-end infinite; /* スピードを速く、なめらかに */
+            padding-right: 20px; 
         }
 
         @keyframes typing {
             from { width: 0; }
-            to { width: 100%; }
+            to { width: 250px; } /* テキストの長さに応じた幅に調整 */
         }
 
         @keyframes blink-caret {
@@ -348,6 +339,15 @@
             50% { border-color: white; }
         }
 
+        #loadingScreen p {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: 300; 
+            font-size: 20px;
+            text-align: center;
+            max-width: 80%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; 
+        }
 
         #menuButton {
             position: fixed;
@@ -359,54 +359,53 @@
 
         /* メニューボタンのスタイルとアニメーションの追加 */
         #menuIcon {
-    width: 80px;
-    height: 80px;
-    background-color: transparent;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
+            width: 80px;
+            height: 80px;
+            background-color: transparent;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
 
-#menuIcon::before, #menuIcon::after, #menuIcon span {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 40px;
-    height: 4px;
-    background-color: #000;
-    transition: all 0.3s ease;
-}
+        #menuIcon::before, #menuIcon::after, #menuIcon span {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 40px;
+            height: 4px;
+            background-color: #000;
+            transition: all 0.3s ease;
+        }
 
-#menuIcon span {
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+        #menuIcon span {
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
 
-#menuIcon::before {
-    top: 35%;
-    transform: translateX(-50%);
-}
+        #menuIcon::before {
+            top: 35%;
+            transform: translateX(-50%);
+        }
 
-#menuIcon::after {
-    top: 65%;
-    transform: translateX(-50%);
-}
+        #menuIcon::after {
+            top: 65%;
+            transform: translateX(-50%);
+        }
 
-#menuButton.menu-open #menuIcon::before {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
+        #menuButton.menu-open #menuIcon::before {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
 
-#menuButton.menu-open #menuIcon::after {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
+        #menuButton.menu-open #menuIcon::after {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
 
-#menuButton.menu-open #menuIcon span {
-    opacity: 0;
-}
-
+        #menuButton.menu-open #menuIcon span {
+            opacity: 0;
+        }
 
         nav a {
             color: #fff; 
@@ -418,41 +417,39 @@
         }
 
         #navMenu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: transparent; /* 背景色を透明に設定 */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    font-family: 'Montserrat', sans-serif;
-}
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: transparent; /* 背景色を透明に設定 */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
 
-#navMenu a {
-    display: block;
-    padding: 10px 20px;
-    color: #000 !important; /* 文字色を黒に設定 */
-    text-decoration: none;
-    background-color: transparent !important; /* 背景色を透明に設定 */
-    border: none; /* 枠線をなしに設定 */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
-    transform: translateY(-10px);
-}
+        #navMenu a {
+            display: block;
+            padding: 10px 20px;
+            color: #000 !important; /* 文字色を黒に設定 */
+            text-decoration: none;
+            background-color: transparent !important; /* 背景色を透明に設定 */
+            border: none; /* 枠線をなしに設定 */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
 
-#navMenu a:hover {
-    background-color: transparent !important; /* ホバー時の背景色を透明に設定 */
-    color: #007bff !important; /* ホバー時の文字色を青に設定 */
-}
+        #navMenu a:hover {
+            background-color: transparent !important; /* ホバー時の背景色を透明に設定 */
+            color: #007bff !important; /* ホバー時の文字色を青に設定 */
+        }
 
-.menu-open #navMenu a {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-        
+        .menu-open #navMenu a {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
 
     </style>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -464,7 +461,6 @@
         <h1>Welcome!</h1>
         <p id="loadingText"><strong>本サイトはレスポンシブデザインに対応しています。<br>©︎ 2016-2024 Reina Hamasaki</strong></p>
     </div>
-
 
     <div id="menuButton">
         <div id="menuIcon">
@@ -702,22 +698,33 @@
                 });
             });
         });
+// ローディング画面を操作するスクリプト
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const loadingText = document.getElementById('loadingText');
 
-        // ローディング画面を操作するスクリプト
-        window.addEventListener('load', function() {
+        // オーバーレイの背景色の変更とテキストの表示
+        loadingScreen.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        loadingScreen.style.transition = 'background-color 0s ease'; // 時間を1秒から0.5秒に短縮
+        loadingText.style.opacity = '1'; // テキストのフェードイン
+        loadingText.style.transition = 'opacity 0.2s ease'; // 表示速度を0.5秒から0.2秒に短縮
+
+        setTimeout(function() {
+            // ローディング画面のスライドアウト
+            loadingScreen.style.transform = 'translateY(-100%)';
+            loadingScreen.style.transition = 'transform 0.5s ease-in-out'; // 時間を1秒から0.5秒に短縮
             setTimeout(function() {
-                const loadingScreen = document.getElementById('loadingScreen');
-                const loadingText = document.getElementById('loadingText');
-                loadingText.style.opacity = '1'; // 3秒かけてテキストを表示
-                setTimeout(function() {
-                    loadingScreen.style.opacity = '0'; // フェードアウト開始
-                    setTimeout(function() {
-                        loadingScreen.style.display = 'none'; // 完全に消す
-                        document.getElementById('menuButton').style.display = 'block'; // ローディング完了後にメニューボタンを表示
-                    }, 1000); // フェードアウトの時間と一致させる
-                }, 2000); // Welcome!以外のテキストを3秒表示
-            }, 1000); // 初期のWelcome!のアニメーション時間
-        });
+                loadingScreen.style.display = 'none'; // ローディング画面を完全に消す
+                document.getElementById('menuButton').style.display = 'block'; // ローディング完了後にメニューボタンを表示
+            }, 500); // トランジションの時間を一致させる
+        }, 1000); // オーバーレイとテキストのアニメーション時間を短縮
+    }, 2000); // ローディング画面の表示時間をさらに短縮
+});
+
+
+
+
 
         // 初期状態でメニューボタンを非表示にする
         document.getElementById('menuButton').style.display = 'none';
