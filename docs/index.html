@@ -54,30 +54,28 @@
             padding: 10px 0; 
         }
         nav {
-            text-align: right;
-            margin-top: 0px;
             display: flex;
-            flex-direction: column; /* モバイルで縦並び */
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 5px 0;
+            margin: 0 15px;
             font-size: 18px;
             transition: color 0.3s;
             font-family: 'Montserrat', sans-serif;
         }
-        nav .icon-links {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        nav .icon-links a {
-            margin: 0 10px;
-        }
         nav a:hover {
             color: #007bff;
+        }
+        .icon-links {
+            display: flex;
+            align-items: center;
+        }
+        .icon-links a {
+            margin: 0 5px;
         }
         section, .slide-item {
             margin: 40px 0;
@@ -222,34 +220,34 @@
             border: none;
         }
         .slick-prev, .slick-next {
-            position: fixed !important; /* 矢印ボタンを固定位置に */
-            background-color: #007bff !important; /* 背景色を青に設定 */
-            color: #fff !important; /* テキストの色を白に設定 */
-            border-radius: 50% !important; /* ボタンを丸くする */
-            width: 60px !important; /* ボタンの幅 */
-            height: 60px !important; /* ボタンの高さ */
+            position: fixed !important;
+            background-color: #007bff !important;
+            color: #fff !important;
+            border-radius: 50% !important;
+            width: 60px !important;
+            height: 60px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
-            opacity: 1 !important; /* ボタンを完全に表示 */
-            z-index: 1000 !important; /* 他の要素の上に表示 */
-            box-shadow: none !important; /* 影をなくしてシンプルに */
+            opacity: 1 !important;
+            z-index: 1000 !important;
+            box-shadow: none !important;
         }
 
         .slick-prev:before, .slick-next:before {
-            font-size: 20px !important; /* アイコンのサイズをさらに大きく */
+            font-size: 20px !important;
         }
 
         .slick-prev {
-            left: 20px !important; /* 画面の左端から20pxに配置 */
-            top: 50% !important; /* 画面の中央に配置 */
-            transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
+            left: 20px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
         }
 
         .slick-next {
-            right: 20px !important; /* 画面の右端から20pxに配置 */
-            top: 50% !important; /* 画面の中央に配置 */
-            transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
+            right: 20px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
         }
 
         .slick-dots {
@@ -301,37 +299,30 @@
             .container {
                 padding: 10px;
             }
-            .icon {
-                width: 40px;
-                height: 40px;
-            }
-            .profile-info {
-                flex-direction: column;
+            nav {
+                flex-direction: column; /* モバイルで縦並び */
                 align-items: center;
             }
-            .profile-info img.profile-img {
-                margin: 20px auto;
-            }
             nav a {
-                margin: 5px 0; /* 縦並びのリンクの間にスペースを追加 */
+                margin: 5px 0;
             }
-            .slick-prev, .slick-next {
-                width: 40px !important; /* 矢印ボタンの幅を小さくする */
-                height: 40px !important; /* 矢印ボタンの高さを小さくする */
-                top: 50% !important; /* 矢印をスライドの中央に配置 */
-                transform: translateY(-50%) !important; /* 縦方向の中央揃え */
-                z-index: 1 !important; /* 矢印がスライドに重ならないようにする */
-            }
-            .slick-prev {
-                left: -20px !important; /* 左矢印をスライド左側に配置 */
-            }
-            .slick-next {
-                right: -20px !important; /* 右矢印をスライド右側に配置 */
-            }
-            nav .icon-links {
+            .icon-links {
                 flex-direction: row; /* 画像付きリンクを横並びに */
                 justify-content: center;
                 margin-top: 10px;
+            }
+            .slick-prev, .slick-next {
+                width: 40px !important;
+                height: 40px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+                z-index: 1 !important;
+            }
+            .slick-prev {
+                left: -20px !important;
+            }
+            .slick-next {
+                right: -20px !important;
             }
         }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -339,10 +330,8 @@
                 font-size: 16px;
             }
             nav {
-                text-align: center;
-            }
-            nav a {
-                margin: 0 10px;
+                flex-direction: row;
+                justify-content: space-between;
             }
             .slider {
                 width: 90%;
@@ -351,6 +340,10 @@
         @media only screen and (min-width: 1025px) {
             body {
                 font-size: 18px;
+            }
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
             }
             .slider {
                 width: 80%;
@@ -519,10 +512,12 @@
         <div class="container">
             <h1>Reina Hamasaki</h1>
             <nav>
-                <a href="#About_Me">ABOUT ME</a>
-                <a href="#skills">SKILL</a>
-                <a href="#projects">WORK</a>
-                <a href="#contact">CONTACT</a>
+                <div class="nav-links">
+                    <a href="#About_Me">ABOUT ME</a>
+                    <a href="#skills">SKILL</a>
+                    <a href="#projects">WORK</a>
+                    <a href="#contact">CONTACT</a>
+                </div>
                 <div class="icon-links">
                     <a href="https://twitter.com/Rh_sapphire" target="_blank">
                         <img src="logo-white.png" class="icon">
@@ -827,4 +822,3 @@
     </footer>
 </body>
 </html>
-
