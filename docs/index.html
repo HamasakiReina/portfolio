@@ -56,14 +56,25 @@
         nav {
             text-align: right;
             margin-top: 0px;
+            display: flex;
+            flex-direction: column; /* モバイルで縦並び */
+            align-items: center;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 5px 0;
             font-size: 18px;
             transition: color 0.3s;
             font-family: 'Montserrat', sans-serif;
+        }
+        nav .icon-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav .icon-links a {
+            margin: 0 10px;
         }
         nav a:hover {
             color: #007bff;
@@ -290,14 +301,6 @@
             .container {
                 padding: 10px;
             }
-            nav {
-                display: flex;
-                flex-direction: column; /* 縦並びにする */
-                align-items: center;
-            }
-            nav a {
-                margin: 5px 0; /* 縦並びのリンクの間にスペースを追加 */
-            }
             .icon {
                 width: 40px;
                 height: 40px;
@@ -309,10 +312,8 @@
             .profile-info img.profile-img {
                 margin: 20px auto;
             }
-            nav a[href^="https://"] {
-                display: flex;
-                flex-direction: row; 
-                justify-content: center;
+            nav a {
+                margin: 5px 0; /* 縦並びのリンクの間にスペースを追加 */
             }
             .slick-prev, .slick-next {
                 width: 40px !important; /* 矢印ボタンの幅を小さくする */
@@ -327,20 +328,10 @@
             .slick-next {
                 right: -20px !important; /* 右矢印をスライド右側に配置 */
             }
-            /* 画像付きリンクを横並びにする */
-            nav {
-                display: flex;
-                flex-wrap: nowrap; /* 横並びにする */
+            nav .icon-links {
+                flex-direction: row; /* 画像付きリンクを横並びに */
                 justify-content: center;
-                gap: 10px; /* 画像リンク間のスペースを調整 */
-            }
-
-            nav a[href^="https://"] {
-                margin: 0; /* 余白をなくして横並びに */
-            }
-            .icon {
-                width: 40px;
-                height: 40px;
+                margin-top: 10px;
             }
         }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -532,15 +523,17 @@
                 <a href="#skills">SKILL</a>
                 <a href="#projects">WORK</a>
                 <a href="#contact">CONTACT</a>
-                <a href="https://twitter.com/Rh_sapphire" target="_blank" style="margin: 10px;">
-                    <img src="logo-white.png" class="icon">
-                </a>
-                <a href="https://github.com/HamasakiReina" target="_blank" style="margin: 10px;">
-                    <img src="github-mark-white.png" class="icon">
-                </a>
-                <a href="https://www.instagram.com/r_lifedays/" target="_blank" style="margin: 10px;">
-                    <img src="Instagram_Glyph_Gradient.png" class="icon">
-                </a>
+                <div class="icon-links">
+                    <a href="https://twitter.com/Rh_sapphire" target="_blank">
+                        <img src="logo-white.png" class="icon">
+                    </a>
+                    <a href="https://github.com/HamasakiReina" target="_blank">
+                        <img src="github-mark-white.png" class="icon">
+                    </a>
+                    <a href="https://www.instagram.com/r_lifedays/" target="_blank">
+                        <img src="Instagram_Glyph_Gradient.png" class="icon">
+                    </a>
+                </div>
             </nav>
         </div>
     </header>
@@ -835,4 +828,3 @@
 </body>
 </html>
 
-                
