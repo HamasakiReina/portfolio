@@ -211,39 +211,35 @@
             border: none;
         }
         .slick-prev, .slick-next {
-    position: fixed !important; /* 矢印ボタンを固定位置に */
-    background-color: #007bff !important; /* 背景色を青に設定 */
-    color: #fff !important; /* テキストの色を白に設定 */
-    border-radius: 50% !important; /* ボタンを丸くする */
-    width: 60px !important; /* ボタンの幅 */
-    height: 60px !important; /* ボタンの高さ */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    opacity: 1 !important; /* ボタンを完全に表示 */
-    z-index: 1000 !important; /* 他の要素の上に表示 */
-    box-shadow: none !important; /* 影をなくしてシンプルに */
-}
+            position: fixed !important; /* 矢印ボタンを固定位置に */
+            background-color: #007bff !important; /* 背景色を青に設定 */
+            color: #fff !important; /* テキストの色を白に設定 */
+            border-radius: 50% !important; /* ボタンを丸くする */
+            width: 60px !important; /* ボタンの幅 */
+            height: 60px !important; /* ボタンの高さ */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            opacity: 1 !important; /* ボタンを完全に表示 */
+            z-index: 1000 !important; /* 他の要素の上に表示 */
+            box-shadow: none !important; /* 影をなくしてシンプルに */
+        }
 
-.slick-prev:before, .slick-next:before {
-    font-size: 20px !important; /* アイコンのサイズをさらに大きく */
-}
+        .slick-prev:before, .slick-next:before {
+            font-size: 20px !important; /* アイコンのサイズをさらに大きく */
+        }
 
-.slick-prev {
-    left: 20px !important; /* 画面の左端から20pxに配置 */
-    top: 50% !important; /* 画面の中央に配置 */
-    transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
-}
+        .slick-prev {
+            left: 20px !important; /* 画面の左端から20pxに配置 */
+            top: 50% !important; /* 画面の中央に配置 */
+            transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
+        }
 
-.slick-next {
-    right: 20px !important; /* 画面の右端から20pxに配置 */
-    top: 50% !important; /* 画面の中央に配置 */
-    transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
-}
-
-
-
-
+        .slick-next {
+            right: 20px !important; /* 画面の右端から20pxに配置 */
+            top: 50% !important; /* 画面の中央に配置 */
+            transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
+        }
 
         .slick-dots {
             text-align: center;
@@ -296,11 +292,12 @@
             }
             nav {
                 display: flex;
-                flex-direction: column; 
-                align-items: center;
+                flex-wrap: nowrap; /* 横並びにするために変更 */
+                justify-content: center;
+                gap: 10px; /* 画像リンク間のスペースを調整 */
             }
             nav a {
-                margin: 5px 0; 
+                margin: 0; /* 余白をなくして横並びに */
             }
             .icon {
                 width: 40px;
@@ -318,6 +315,19 @@
                 display: flex;
                 flex-direction: row; 
                 justify-content: center;
+            }
+            .slick-prev, .slick-next {
+                width: 40px !important; /* 矢印ボタンの幅を小さくする */
+                height: 40px !important; /* 矢印ボタンの高さを小さくする */
+                top: auto !important; /* 中央配置を解除 */
+                bottom: 10px !important; /* スライドの下部に配置 */
+                transform: none !important; /* 元の位置に戻す */
+            }
+            .slick-prev {
+                left: 10px !important; /* 左矢印をスライド左下に配置 */
+            }
+            .slick-next {
+                right: 10px !important; /* 右矢印をスライド右下に配置 */
             }
         }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -812,3 +822,4 @@
 </body>
 </html>
 
+                
