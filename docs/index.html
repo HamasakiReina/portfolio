@@ -211,34 +211,39 @@
             border: none;
         }
         .slick-prev, .slick-next {
-            background-color: #007bff !important; /* 確実に背景色を適用 */
-            color: #fff !important; /* テキストの色を白に設定 */
-            border-radius: 50% !important; /* ボタンを丸くする */
-            width: 60px !important; /* ボタンの幅をさらに大きく */
-            height: 60px !important; /* ボタンの高さをさらに大きく */
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            opacity: 1 !important; /* ボタンを完全に表示 */
-            z-index: 1000 !important; /* 他の要素の上に表示 */
-            box-shadow: none !important; /* 影をなくしてシンプルに */
-        }
+    position: fixed !important; /* 矢印ボタンを固定位置に */
+    background-color: #007bff !important; /* 背景色を青に設定 */
+    color: #fff !important; /* テキストの色を白に設定 */
+    border-radius: 50% !important; /* ボタンを丸くする */
+    width: 60px !important; /* ボタンの幅 */
+    height: 60px !important; /* ボタンの高さ */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important; /* ボタンを完全に表示 */
+    z-index: 1000 !important; /* 他の要素の上に表示 */
+    box-shadow: none !important; /* 影をなくしてシンプルに */
+}
 
-        .slick-prev:before, .slick-next:before {
-            font-size: 20px !important; /* アイコンのサイズをさらに大きく */
-        }
+.slick-prev:before, .slick-next:before {
+    font-size: 20px !important; /* アイコンのサイズをさらに大きく */
+}
 
-        .slick-prev:hover, .slick-next:hover {
-            background-color: #0056b3 !important; /* ホバー時の背景色を変更 */
-        }
+.slick-prev {
+    left: 20px !important; /* 画面の左端から20pxに配置 */
+    top: 50% !important; /* 画面の中央に配置 */
+    transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
+}
 
-        .slick-prev {
-            left: -80px !important; /* スライド枠の外側にさらに配置 */
-        }
+.slick-next {
+    right: 20px !important; /* 画面の右端から20pxに配置 */
+    top: 50% !important; /* 画面の中央に配置 */
+    transform: translateY(-50%) !important; /* 矢印ボタンを縦方向に中央揃え */
+}
 
-        .slick-next {
-            right: -80px !important; /* スライド枠の外側にさらに配置 */
-        }
+
+
+
 
         .slick-dots {
             text-align: center;
@@ -301,7 +306,6 @@
                 width: 40px;
                 height: 40px;
                 margin: 0 5px;
-                display: inline-block; /* 画像リンクを横並びにするために追加 */
             }
             .profile-info {
                 flex-direction: column;
@@ -644,10 +648,13 @@
                     <br>実際に仮想空間上に制作しました。
                     <br>このシステムを使用することで、過去の自分が現在の自分の悩みに耳を傾け適切なアドバイスをくれたり
                     <br>鼓舞してくれたりする「自分が自分を助ける」社会を提案しました。</p>
-                <ul>
-                    <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
-                    <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
-                </ul>
+                    <br><br><br><br>
+                    <ul>
+                        <li><a href="https://www.miraikan.jst.go.jp/sp/miraikanvisionaries/" target="_blank"><strong>イベント概要</strong></a></li>
+                        <li><a href="https://note.com/m_visionaries/n/na261169ee634" target="_blank"><strong>参加の様子（チーム団子）</strong></a></li>
+                    </ul>
+                    <br><br><br><br>
+
             </div>
         </div>
     </section>
@@ -681,6 +688,7 @@
             <div class="slide-item">
                 <h2>SDGsビジネスモデル考案</h2>
                 <p>持続可能な農業を目指す上での活動として堆肥茶について着目し、ビジネスモデルを考案し発表しました。</p>
+                <br>
                 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR3NaihdmApltc35EHvG0QLowJS6u5t77-l36IlHOU3LhzoioMnO2gb4oz7lT90dFxP7j9YHgl4mWRw/embed?start=false&loop=true&delayms=30000" frameborder="0" width="640" height="360" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
             </div>  
         </div>
@@ -803,3 +811,4 @@
     </footer>
 </body>
 </html>
+
