@@ -292,17 +292,15 @@
             }
             nav {
                 display: flex;
-                flex-wrap: nowrap; /* 横並びにするために変更 */
-                justify-content: center;
-                gap: 10px; /* 画像リンク間のスペースを調整 */
+                flex-direction: column; /* 縦並びにする */
+                align-items: center;
             }
             nav a {
-                margin: 0; /* 余白をなくして横並びに */
+                margin: 5px 0; /* 縦並びのリンクの間にスペースを追加 */
             }
             .icon {
                 width: 40px;
                 height: 40px;
-                margin: 0 5px;
             }
             .profile-info {
                 flex-direction: column;
@@ -319,15 +317,30 @@
             .slick-prev, .slick-next {
                 width: 40px !important; /* 矢印ボタンの幅を小さくする */
                 height: 40px !important; /* 矢印ボタンの高さを小さくする */
-                top: auto !important; /* 中央配置を解除 */
-                bottom: 10px !important; /* スライドの下部に配置 */
-                transform: none !important; /* 元の位置に戻す */
+                top: 50% !important; /* 矢印をスライドの中央に配置 */
+                transform: translateY(-50%) !important; /* 縦方向の中央揃え */
+                z-index: 1 !important; /* 矢印がスライドに重ならないようにする */
             }
             .slick-prev {
-                left: 10px !important; /* 左矢印をスライド左下に配置 */
+                left: -20px !important; /* 左矢印をスライド左側に配置 */
             }
             .slick-next {
-                right: 10px !important; /* 右矢印をスライド右下に配置 */
+                right: -20px !important; /* 右矢印をスライド右側に配置 */
+            }
+            /* 画像付きリンクを横並びにする */
+            nav {
+                display: flex;
+                flex-wrap: nowrap; /* 横並びにする */
+                justify-content: center;
+                gap: 10px; /* 画像リンク間のスペースを調整 */
+            }
+
+            nav a[href^="https://"] {
+                margin: 0; /* 余白をなくして横並びに */
+            }
+            .icon {
+                width: 40px;
+                height: 40px;
             }
         }
         @media only screen and (min-width: 601px) and (max-width: 1024px) {
