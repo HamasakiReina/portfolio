@@ -223,18 +223,23 @@
             z-index: 1000 !important; /* 他の要素の上に表示 */
             box-shadow: none !important; /* 影をなくしてシンプルに */
         }
+
         .slick-prev:before, .slick-next:before {
             font-size: 20px !important; /* アイコンのサイズをさらに大きく */
         }
+
         .slick-prev:hover, .slick-next:hover {
             background-color: #0056b3 !important; /* ホバー時の背景色を変更 */
         }
+
         .slick-prev {
             left: -80px !important; /* スライド枠の外側にさらに配置 */
         }
+
         .slick-next {
             right: -80px !important; /* スライド枠の外側にさらに配置 */
         }
+
         .slick-dots {
             text-align: center;
             padding: 20px 0;
@@ -296,6 +301,7 @@
                 width: 40px;
                 height: 40px;
                 margin: 0 5px;
+                display: inline-block; /* 画像リンクを横並びにするために追加 */
             }
             .profile-info {
                 flex-direction: column;
@@ -797,5 +803,3 @@
     </footer>
 </body>
 </html>
-
-
